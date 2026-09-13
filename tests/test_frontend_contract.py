@@ -256,3 +256,21 @@ def test_data_fetches_are_cache_busted():
 def test_aggregator_hosts_are_not_credited_as_publishers():
     assert "AGGREGATORS" in APP_JS
     assert "news.google.com" in APP_JS.split("var AGGREGATORS")[1].split("};")[0]
+
+
+def test_page_declares_itself_stale_when_updates_stop():
+    """A page that quietly serves last week's news as if it were current is worse
+    than one that says so. This is the only guard against a silently dead cron."""
+    assert "renderStaleness" in APP_JS
+    fn = APP_JS.split("function renderStaleness")[1].split("function renderChrome")[0]
+    assert "interval * 3" in fn, "no threshold on the staleness check"
+    assert 'id="stale"' in HTML
+    assert ".stale" in CSS
+    for lang in ("en: {", "zh: {"):
+        block = APP_JS.split(lang)[1][:2600]
+        assert "staleTitle" in block and "staleNote" in block
+
+
+def test_staleness_banner_is_hidden_by_default():
+    """It must never flash on a healthy page during load."""
+    assert 'id="stale"' in HTML and "hidden>" in HTML.split('id="stale"')[1][:80]

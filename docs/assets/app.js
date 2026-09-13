@@ -31,6 +31,11 @@
       empty: "No relevant news for this date.",
       emptyNote: "The brief refreshes every three hours; a quiet day is reported as a quiet day rather than padded.",
       loading: "Loading…",
+      staleTitle: "Automatic updates appear to have stopped.",
+      staleNote: function (h) {
+        return "The brief last refreshed " + h + " hours ago, against a three-hour schedule. " +
+               "The items below are still what was published then, but newer news is missing.";
+      },
       errorTitle: "The brief could not be loaded.",
       errorNote: "Please reload the page. If it keeps failing, the last successful build is still served at this address.",
       missingDay: "No brief was published for this date.",
@@ -63,6 +68,11 @@
       empty: "该日期没有相关新闻。",
       emptyNote: "简报每三小时刷新一次；清淡的一天会如实呈现，不做填充。",
       loading: "加载中…",
+      staleTitle: "自动更新似乎已停止。",
+      staleNote: function (h) {
+        return "简报上一次刷新在 " + h + " 小时前，而设定的周期为三小时。" +
+               "以下条目仍是当时发布的内容，但更新的新闻尚未收录。";
+      },
       errorTitle: "简报加载失败。",
       errorNote: "请重新载入页面。若持续失败，此地址仍会提供最近一次成功构建的内容。",
       missingDay: "该日期没有发布简报。",
@@ -204,6 +214,36 @@
   }
 
   function hideStatus() { el.status.hidden = true; clear(el.status); }
+
+  /* Hours since the last successful pipeline run, or null if unknown. */
+  function hoursSinceUpdate() {
+    var index = state.index;
+    if (!index || !index.generated_at) { return null; }
+    var then = new Date(index.generated_at).getTime();
+    if (isNaN(then)) { return null; }
+    return (Date.now() - then) / 3600000;
+  }
+
+  /* A page that quietly serves last week's news as if it were current is worse
+     than one that says so. Three missed runs is the threshold. */
+  function renderStaleness() {
+    var hours = hoursSinceUpdate();
+    var interval = (state.index && state.index.update_interval_hours) || 3;
+    var banner = document.getElementById("stale");
+    if (hours === null || hours < interval * 3) {
+      banner.hidden = true;
+      clear(banner);
+      return;
+    }
+    clear(banner);
+    var head = document.createElement("p");
+    head.textContent = t().staleTitle;
+    var note = document.createElement("p");
+    note.textContent = t().staleNote(Math.round(hours));
+    banner.appendChild(head);
+    banner.appendChild(note);
+    banner.hidden = false;
+  }
 
   function renderChrome() {
     var s = t();
@@ -371,6 +411,7 @@
 
   function renderAll() {
     renderChrome();
+    renderStaleness();
     renderDates();
     renderDayHeading();
     renderItems();

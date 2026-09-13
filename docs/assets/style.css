@@ -252,6 +252,16 @@ body[lang="zh"] .day-heading { font-family: var(--font-cjk); }
 .status p { margin: 0; }
 .status p + p { margin-top: 8px; font-size: 0.84rem; color: var(--ink-faint); }
 
+/* Staleness banner. Uses the accent, because a brief that has silently stopped
+   refreshing is the one thing on this page the reader must not miss. */
+.stale {
+  max-width: var(--measure);
+  margin: 16px auto 0;
+  border-left-color: var(--accent);
+}
+.stale p:first-child { color: var(--accent); font-weight: 600; }
+.stale[hidden] { display: none !important; }
+
 .items { list-style: none; margin: 0; padding: 0; }
 
 .item {
