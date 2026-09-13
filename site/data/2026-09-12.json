@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-12",
+  "updated_at": "2026-09-13T14:25:50Z",
+  "items": [
+    {
+      "id": "63b9a12be6fbdd54",
+      "title_en": "US mortgage rates end the week at 7.12% as the 10-year yield approaches 5%",
+      "title_zh": "美国抵押贷款利率收于 7.12%，10 年期美债收益率逼近 5%",
+      "summary_en": "The 30-year mortgage rate ended the week at 7.12%, its first move above 7% this year, after an escalation of the Iran conflict pushed the 10-year Treasury yield closer to 5%. Rates had been as low as 5.99% at one point in 2026. Mortgage spreads narrowed slightly to 1.92% from 1.94% the week before, against a historical range of 1.60% to 1.80%; at the widest spread levels of 2023 the same 10-year yield would imply a mortgage rate of 8.31%.",
+      "summary_zh": "美国 30 年期抵押贷款利率上周收于 7.12%，为今年首次升破 7%。此前伊朗冲突升级推动 10 年期美债收益率进一步逼近 5%。该利率在 2026 年内一度低至 5.99%。抵押贷款利差小幅收窄至 1.92%，前一周为 1.94%，历史区间为 1.60% 至 1.80%；若按 2023 年最阔的利差水平计算，当前 10 年期收益率对应的抵押贷款利率将达 8.31%。",
+      "url": "https://housingwire.com/articles/housing-market-faces-headwinds-as-mortgage-rates-move-above-7",
+      "also_urls": [],
+      "source": "HousingWire",
+      "also_sources": [],
+      "published_at": "2026-09-12T21:18:36Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "mortgage"
+      ],
+      "exposure_gp_ids": [
+        "bayview",
+        "pretium"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "0b447a5c9474d85f",
+      "title_en": "KKR and Neuberger Berman anchor a debt recapitalisation at Datavant",
+      "title_zh": "KKR 与 Neuberger Berman 主导 Datavant 债务重组融资",
+      "summary_en": "KKR and Neuberger Berman are anchoring a debt recapitalisation of Datavant, according to Axios. Terms were not reported.",
+      "summary_zh": "据 Axios 报道，KKR 与 Neuberger Berman 将主导 Datavant 的债务重组融资。报道未披露交易条款。",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOYUFNN2VSRDRaaU5zZHQ0SkhGVEhmYzlyR21IOHRqZEU5ZWxDcjdLcGJZM1N0NEZCSUtrYi10VmVJcEQ4SVBUaHFPZ3dDNjVyLWdhZTc5T3d0S1doU3FabG04dmI4TDItNFgxaUJsMzRxVmZTUG1vSGFYMmNySUV2RW5fVGRSQzkzTHdRWGN6Nm9qaUZyTEVv",
+      "also_urls": [],
+      "source": "Axios",
+      "also_sources": [],
+      "published_at": "2026-09-12T04:37:13Z",
+      "gp_ids": [
+        "kkr",
+        "neuberger-berman"
+      ],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    }
+  ]
+}

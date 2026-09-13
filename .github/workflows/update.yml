@@ -1,0 +1,83 @@
+name: update-brief
+
+on:
+  schedule:
+    # Every 3 hours, UTC. Scheduled workflows on free runners can be delayed by
+    # several minutes under load — a late timestamp is not a fault.
+    - cron: "0 */3 * * *"
+  workflow_dispatch:          # manual trigger — deliverable (3) requires this
+    inputs:
+      lookback_hours:
+        description: "Harvest window in hours (default 8; use 168 for a first backfill)"
+        required: false
+        default: ""
+      mock:
+        description: "Run with --mock-llm (no API spend)"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-brief
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # The trap fixtures are the contract. A prompt or entity edit that breaks
+      # them must not reach the page.
+      - name: Test
+        run: python -m pytest tests/ -q
+
+      - name: Build the brief
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EDGAR_USER_AGENT:  ${{ secrets.EDGAR_USER_AGENT }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.lookback_hours }}" ]; then
+            ARGS="$ARGS --lookback-hours ${{ github.event.inputs.lookback_hours }}"
+          fi
+          if [ "${{ github.event.inputs.mock }}" = "true" ]; then
+            ARGS="$ARGS --mock-llm"
+          fi
+          python -m pipeline.run $ARGS
+
+      # The repo is public. Nothing that looks like a key may ever be committed.
+      - name: Scan output for secrets
+        run: |
+          if grep -rEl 'sk-ant-[A-Za-z0-9_-]{16,}' site/ ; then
+            echo "::error::a credential-shaped string is present in site/ — refusing to commit"
+            exit 1
+          fi
+          echo "clean"
+
+      - name: Commit
+        run: |
+          git config user.name  "credit-brief-bot"
+          git config user.email "actions@github.com"
+          git add site/data
+          git diff --staged --quiet || git commit -m "brief: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+
+      - name: Funnel summary
+        if: always()
+        run: |
+          echo "### Run summary" >> $GITHUB_STEP_SUMMARY
+          echo '```json' >> $GITHUB_STEP_SUMMARY
+          tail -n 1 site/data/_runs.jsonl >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "{}" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY

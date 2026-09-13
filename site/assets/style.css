@@ -1,0 +1,385 @@
+/* Credit Brief. BUILD_SPEC §8.3.
+   A document for an investment professional, not a product landing page:
+   one accent colour, used sparingly; everything else is type and space. */
+
+:root {
+  --bg:          #fbfaf8;
+  --surface:     #ffffff;
+  --rule:        #e5e1da;
+  --rule-strong: #d3cec4;
+  --ink:         #1b1a18;
+  --ink-muted:   #5f5b54;
+  --ink-faint:   #8a857c;
+  --accent:      #9c4a1a;   /* the only accent; carried by the Key tag alone */
+  --accent-bg:   #f7e9df;
+  --gp-ink:      #2b3d52;
+  --gp-bg:       #e6ecf3;
+  --sector-ink:  #4a4741;
+  --sector-bg:   #eeebe5;
+  --focus:       #1f5fbf;
+
+  --measure: 68ch;
+  --font-latin: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-cjk: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC",
+              "Source Han Sans SC", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:          #15161a;
+    --surface:     #1b1d22;
+    --rule:        #2c2f36;
+    --rule-strong: #3a3e46;
+    --ink:         #e9e7e3;
+    --ink-muted:   #a9a59d;
+    --ink-faint:   #837f77;
+    --accent:      #e08c54;
+    --accent-bg:   #3a2617;
+    --gp-ink:      #bcd2e8;
+    --gp-bg:       #22303f;
+    --sector-ink:  #c3bfb7;
+    --sector-bg:   #2a2c31;
+    --focus:       #7fb0ff;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 0 20px env(safe-area-inset-bottom, 24px);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 17px;           /* R: body text no smaller than 16px on mobile */
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Chinese needs a different stack and a looser leading than the Latin text. */
+body[lang="zh"] {
+  font-family: var(--font-cjk);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+body[lang="zh"] .item-title { font-family: var(--font-cjk); letter-spacing: 0; }
+body[lang="zh"] h1 { font-family: var(--font-cjk); }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--ink); color: var(--bg);
+  padding: 10px 14px; z-index: 10; border-radius: 0 0 6px 0;
+}
+.skip-link:focus { left: 0; }
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ------------------------------------------------------------ masthead */
+
+.masthead {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 28px 0 14px;
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.masthead-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+h1 {
+  font-family: var(--font-latin);
+  font-size: 1.6rem;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.standfirst {
+  margin: 5px 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  max-width: 46ch;
+}
+
+.meta-line {
+  margin: 12px 0 0;
+  font-size: 0.74rem;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* R6: top-right, switches the entire page. */
+.lang-toggle {
+  display: inline-flex;
+  flex: 0 0 auto;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.lang-toggle button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 0.78rem;
+  line-height: 1;
+  padding: 7px 12px;
+  cursor: pointer;
+  min-height: 32px;
+}
+.lang-toggle button + button { border-left: 1px solid var(--rule); }
+.lang-toggle button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 600;
+}
+.lang-toggle button:hover:not([aria-pressed="true"]) { color: var(--ink); }
+
+/* --------------------------------------------------------- date nav (R3) */
+
+.dates {
+  max-width: var(--measure);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 0 6px;
+}
+
+.date-track {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 2px 0;
+  /* Sizes to its chips and shrinks when there are too many to fit, so the
+     step buttons stay next to the dates instead of drifting to the edges. */
+  flex: 0 1 auto;
+}
+.date-track::-webkit-scrollbar { display: none; }
+
+.date-chip {
+  appearance: none;
+  flex: 0 0 auto;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 0.76rem;
+  line-height: 1.2;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  min-height: 34px;
+}
+.date-chip .count {
+  color: var(--ink-faint);
+  font-size: 0.68rem;
+  margin-left: 5px;
+}
+.date-chip[aria-current="date"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+  font-weight: 600;
+}
+.date-chip[aria-current="date"] .count { color: rgba(255,255,255,0.68); }
+
+.date-step {
+  appearance: none;
+  flex: 0 0 auto;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  color: var(--ink-muted);
+  font-size: 1rem;
+  line-height: 1;
+  width: 32px; height: 34px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.date-step[disabled] { opacity: 0.32; cursor: default; }
+
+/* -------------------------------------------------------------- content */
+
+main {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 6px 0 40px;
+}
+
+.day-heading {
+  font-family: var(--font-latin);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 18px 0 4px;
+  letter-spacing: 0.01em;
+}
+body[lang="zh"] .day-heading { font-family: var(--font-cjk); }
+
+.status {
+  margin: 20px 0;
+  padding: 16px 18px;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--rule-strong);
+  background: var(--surface);
+  border-radius: 4px;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+}
+.status p { margin: 0; }
+.status p + p { margin-top: 8px; font-size: 0.84rem; color: var(--ink-faint); }
+
+.items { list-style: none; margin: 0; padding: 0; }
+
+.item {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.item:last-child { border-bottom: 0; }
+
+.item-title {
+  font-family: var(--font-latin);
+  font-size: 1.12rem;
+  line-height: 1.32;
+  font-weight: 600;
+  margin: 0 0 8px;
+  letter-spacing: -0.005em;
+}
+
+.item-summary {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+body[lang="zh"] .item-summary { line-height: 1.85; }
+
+.item-source {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+.item-source .sep { margin: 0 6px; color: var(--rule-strong); }
+
+.item-link {
+  color: var(--ink-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 2px;
+}
+.item-link:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+.item-also { color: var(--ink-faint); }
+.item-also::before { content: " · "; color: var(--rule-strong); }
+
+/* ------------------------------------------------------------ tags (R9)
+   Small print, visually subordinate to the summary. Three classes, distinct:
+   importance carries the accent and appears only on Tier 1; GP is filled and
+   a different hue; sub-sector is quieter still. */
+
+.tags {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  line-height: 1.5;
+  padding: 1px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.tag-key {
+  color: var(--accent);
+  background: var(--accent-bg);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+body[lang="zh"] .tag-key { text-transform: none; letter-spacing: 0.04em; }
+
+.tag-gp     { color: var(--gp-ink);     background: var(--gp-bg);     font-weight: 600; }
+.tag-sector { color: var(--sector-ink); background: var(--sector-bg); font-weight: 400; }
+
+/* Inferred exposure: a holding touched by the sub-sector but NOT named in the
+   story. Outlined rather than filled, so it can never be misread as a confirmed
+   mention — the distinction is the whole point of showing it at all. */
+.tag-exposure {
+  color: var(--gp-ink);
+  background: transparent;
+  box-shadow: inset 0 0 0 1px currentColor;
+  opacity: 0.72;
+  font-weight: 500;
+}
+.tag-exposure-label {
+  color: var(--ink-faint);
+  background: transparent;
+  padding-left: 2px;
+  padding-right: 3px;
+  font-weight: 400;
+}
+.tag-exposure-label::after { content: " ›"; }
+
+/* ------------------------------------------------------------- footer */
+
+/* The font-size lives on the paragraph, not on the element that carries
+   `max-width: <n>ch` — `ch` scales with the element's own font-size, so setting
+   both here would silently narrow the box and knock it off the text column. */
+footer {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 20px 0 40px;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-faint);
+}
+footer p { margin: 0; font-size: 0.74rem; max-width: 68ch; }
+footer a { color: var(--ink-faint); }
+
+/* --------------------------------------------------------------- motion */
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .date-track { scroll-behavior: auto; }
+}
+
+/* ----------------------------------------------------------- wider screens */
+
+@media (min-width: 700px) {
+  body { font-size: 17px; }
+  h1 { font-size: 1.85rem; }
+  .item-title { font-size: 1.2rem; }
+  .masthead { padding-top: 40px; }
+}
+
+.dates[hidden] { display: none; }

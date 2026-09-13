@@ -1,0 +1,398 @@
+{
+  "date": "2026-09-11",
+  "updated_at": "2026-09-13T14:25:50Z",
+  "items": [
+    {
+      "id": "93db685ca8a3bece",
+      "title_en": "KKR completes a $2.1bn leveraged loan for the Integer acquisition",
+      "title_zh": "KKR 完成 21 亿美元杠杆贷款，为收购 Integer 融资",
+      "summary_en": "KKR has completed a $2.1 billion leveraged loan to fund its acquisition of Integer, according to Bloomberg.",
+      "summary_zh": "据 Bloomberg 报道，KKR 已完成一笔 21 亿美元杠杆贷款，为其收购 Integer 提供资金。",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPS0d5Q3FYUkhlVGNMajZ2MFVneGk5OHpXM3dOZGhReTVDTUhGUmZTRlhSQ01ETi13blFmd050MTA0WHAweUNMUXdWb0pWMmtrNFl1OFpNZHpRRE5XdTBfdzUzSjdPUVNtWm5KM2hFelMybFVrcWducVRFSTBjOG5vQ2N5aWNDUnFST1FodTMzNTVjdGJTbWFYOURpVTVVS21yT3pRUFNCMUpVbXBoNndxRURIUUI",
+      "also_urls": [
+        "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdi1BaDgtN3NidVBGWHFxZ1hvdXV3Ym9kODE3TkpOdGh3THl2aHVSeEFoMzlHWENpeGhVUjZ2MnUxbUhHeUpVbE5WRy02SHRhdWZVTmNsVWpWTUJ5MzVnV25tS2lVRFpSaHlqY3BUcTVPTjg1bUN6cUN4QXhNVmlIZG9iSXg2ZGtPalFCU3l3eXd2eElYR1d0b3Z6Q1BRalF6WklTTTVRb2FGeTlQd2c",
+        "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRU1HNF81UDZSTGdhcnVkaG1CMG95dUJidnRiTjRvYzlrYVZPRjZJZjVmUWhKY2dwYmpjYkhxT3BSUjlaQktVQkd3Tlg4TGdBZVRocndORmZMdGJhMERXV1ZqSFJ4NGE4anBRbEtFNEdSa2ozdkdyR3J6eFNiV0dZWHNTLUJEM0dQ"
+      ],
+      "source": "Bloomberg.com",
+      "also_sources": [
+        "Briefs Finance",
+        "Investing.com"
+      ],
+      "published_at": "2026-09-11T21:33:50Z",
+      "gp_ids": [
+        "kkr"
+      ],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "0b99200871f9b477",
+      "title_en": "Direct lending spreads compress to 544bp as covenant-lite reaches 21% of deals",
+      "title_zh": "直接贷款利差压缩至 544 个基点，契约宽松交易占比达 21%",
+      "summary_en": "Global new-issue direct loan median spreads fell to 544 basis points at the end of 2025, from 596 basis points a year earlier and a peak of 716 basis points in March 2023, according to McKinsey's Global Private Markets Report 2026. Covenant-lite transactions rose to 21% of all direct lending deals over the same period, from 4% in 2023. Average LBO deal size in direct lending climbed 29% to about $380 million by 2025, against roughly $295 million the prior year and $200 million in 2020. Private credit is estimated at $3 trillion and projected to reach approximately $5 trillion by 2029.",
+      "summary_zh": "据麦肯锡《2026 年全球私募市场报告》，全球新发直接贷款的中位数利差已降至 2025 年底的 544 个基点，一年前为 596 个基点，2023 年 3 月峰值为 716 个基点。同期契约条款宽松（covenant-lite）交易占全部直接贷款交易的比例由 2023 年的 4% 升至 21%。直接贷款的平均杠杆收购交易规模至 2025 年增长 29% 至约 3.8 亿美元，前一年约为 2.95 亿美元，2020 年为 2 亿美元。私募信贷市场规模估计为 3 万亿美元，预计到 2029 年将达约 5 万亿美元。",
+      "url": "https://abfjournal.com/after-unitranche-how-the-middle-market-capital-stack-is-being-pulled-apart-from-inside",
+      "also_urls": [],
+      "source": "ABF Journal",
+      "also_sources": [],
+      "published_at": "2026-09-11T19:57:33Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "private-credit",
+        "abl"
+      ],
+      "exposure_gp_ids": [
+        "blue-owl",
+        "otf",
+        "kkr",
+        "apollo"
+      ],
+      "region": "Global",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "2d37be1df6dcc2da",
+      "title_en": "Apollo winds down mid-market receivables and supply-chain finance at Eliant",
+      "title_zh": "Apollo 收缩 Eliant 平台的中端市场应收账款与供应链融资业务",
+      "summary_en": "Apollo Global Management is winding down the mid-market accounts receivable and supply-chain finance products at its Eliant Trade Finance platform, a decision disclosed on 11 September. The rest of the platform continues to operate, and the wind-down follows adverse conditions in the inventory financing market rather than a problem at the platform itself. Eliant was formed in January 2022 by Apollo with its insurance affiliate Athene and BNP Paribas, launching with $1.3 billion in signed programmes, and reported $1.6 billion of new transactions in 2025.",
+      "summary_zh": "Apollo Global Management 正收缩旗下 Eliant Trade Finance 平台的中端市场应收账款与供应链融资产品，该决定于 9 月 11 日披露，平台其余业务继续运作。此举源于存货融资市场环境转差，而非平台自身出现问题。Eliant 由 Apollo 联合保险关联方 Athene 及法国巴黎银行于 2022 年 1 月设立，起步时已签约项目规模 13 亿美元，2025 年新增交易额 16 亿美元。",
+      "url": "https://cryptobriefing.com/apollo-winds-down-eliant-trade-finance-products",
+      "also_urls": [],
+      "source": "Bing News",
+      "also_sources": [],
+      "published_at": "2026-09-11T16:55:00Z",
+      "gp_ids": [
+        "apollo"
+      ],
+      "sector_ids": [
+        "abl"
+      ],
+      "exposure_gp_ids": [],
+      "region": "US",
+      "importance": 1,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "6c5e081e8d50d928",
+      "title_en": "Blue Owl Technology Finance raises $800m in debt",
+      "title_zh": "Blue Owl Technology Finance 完成 8 亿美元债务融资",
+      "summary_en": "Blue Owl Technology Finance has raised $800 million in debt, according to Connect Money. The structure and pricing were not reported.",
+      "summary_zh": "据 Connect Money 报道，Blue Owl Technology Finance 已完成 8 亿美元债务融资。报道未披露融资结构与定价。",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQcDFJRlFWT2NDVjFfQXBMRzd2TG5QSmVJZXhfSUg1MVBsTVctTFp2NElqN1JDRm1fU1p4TEVXY0NJYU81cGREcEpjbG9LcDlaSFZTOERZTVNGallYOXp0RWVKMmpHTW5PZ2t6dmY0T2tTc1lhak1FM3ExSzBsZDNtR3B6Sm96cEIxSUJnX3JB",
+      "also_urls": [],
+      "source": "connectmoney.com",
+      "also_sources": [],
+      "published_at": "2026-09-11T16:22:48Z",
+      "gp_ids": [
+        "blue-owl",
+        "otf"
+      ],
+      "sector_ids": [
+        "private-credit",
+        "software"
+      ],
+      "exposure_gp_ids": [],
+      "region": "US",
+      "importance": 1,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "2cf21a512c1ad17a",
+      "title_en": "Redemption requests at BlackRock's HPS Corporate Lending Fund fall to 11.5%",
+      "title_zh": "BlackRock 旗下 HPS Corporate Lending Fund 三季度赎回申请降至 11.5%",
+      "summary_en": "Investors in BlackRock's HPS Corporate Lending Fund tendered about 11.5% of the fund's shares for repurchase in the third quarter, down from 13.3% in the second, according to a regulatory filing. The non-traded business development company will repurchase around 5% of its outstanding shares, or approximately $600 million, the limit set under its quarterly tender offer, at a price based on net asset value as of 30 September. In the second quarter investors tendered 66.7 million shares and the fund accepted about 25.1 million.",
+      "summary_zh": "据监管备案文件，BlackRock 旗下 HPS Corporate Lending Fund 三季度收到的赎回申请约占基金份额的 11.5%，低于二季度的 13.3%。这家非交易型业务发展公司（BDC）将按季度要约收购的上限回购约 5% 的流通份额，金额约 6 亿美元，定价以 9 月 30 日的净资产值为准。二季度投资者共提交 6,670 万份赎回申请，基金接受约 2,510 万份。",
+      "url": "https://alternativecreditinvestor.com/2026/09/11/blackrock-private-credit-fund-redemption-requests-ease-in-q3",
+      "also_urls": [
+        "https://news.google.com/rss/articles/CBMiswFBVV95cUxNXy1rMGlycVlBVGlqcUpyNTJFbEZfQjBCOVpDOWtudnFoZ2hHNmlndUx6akRmbWN0RXN5MVM3SE5Ed2lqQS1mempVSVFydUNNWkh6LVBxdTZPaTNpcEVUdEZpbUdZUmE0QWpnREwxM2I1ekljeDd2Tk1ISUtDQlp5NjJtSjZYNEU3bUQ3eU9PSHpPVUdLQWdDTF9GbnU4XzdWNlFfc3BNNFhxeF81MGstWFJLNA",
+        "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNS3pHLXo2d2ZjV2VYdzMxaEF1dlQ4UlctU3FzWkdYREVVV0pKTHJJQTdXczVLNlpkZUIzUXBtbmxaOGRMUjZnNC1pRnRsNEhVcFc5TnpCdzRoNHdZSy1WUzBXTWFfZUpqUmlaTVl6NkVnUnI1T3pSQks4Q2ZnbjFobHJsRWxGbU1kSzBndFVSWjVSWEdoWnBFMjRqclRiOV9qZlBKejVuZjZuMXA3ZDRZSUNyR2I3cTFSRFJoR3pPRzhKMmh0UjQ0NnQ0UmtIMFR4Y3VnRE5JN2t6R2lVdGJxS1hsM3BlZmRJUHR2bEd3WlFzUW45d0NXZ0xR0gH_AUFVX3lxTE1qNzhzY2tMa1RBWWlLWk5DVnpWM3lObTNncGpJQk85NGZHUGNRekpueWY2MHpQZjhCQVN5OW02TWxWdkJLT2ZUcUFZQzZnVGlVOXRqbE04S1NKTFhNR080UnZtSnp2NDN0aGdWT05KZUtycms3LUFvaXlRSS15N3dMZ25ZRlEteS1HYTRacnpVejRMT2plV3Nydk11RFljMjhsZVZaa2ppWENuSTJkZ2ppOGNFQ2pTV1JxUTdQWUU4TnBqbHlveUlBZGNSUXhaTzFvY3pucmM0QXRUdDl1WnRnay1rcVQ1dUFCUUNLVHpwTzNXSGJlangzU1VJMldGTQ",
+        "https://news.google.com/rss/articles/CBMiigFBVV95cUxQMzBhaklZN2loc2FHWWVFdjJPM3IzTVZydnZhdlZLRmVtTlM1aU5LT1FfSG5KNm9rcDRhT1BtNll5c0cxZUxqb0RUank1akFPZWJZWVp2cUJId0Q5ckhJMEpPQTQtUVdVaDBSenpaamVoTmh2RmlHOERkZ2lwTjR5TTNLdkJVbWhFYkE"
+      ],
+      "source": "Alternative Credit Investor",
+      "also_sources": [
+        "Finimize",
+        "Seeking Alpha",
+        "The Economic Times"
+      ],
+      "published_at": "2026-09-11T14:16:11Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [
+        "blue-owl",
+        "otf",
+        "kkr",
+        "apollo"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "0f98188683248508",
+      "title_en": "Ten-year Treasury yields approach 5% with a Fed rate rise priced at 70%",
+      "title_zh": "10 年期美债收益率逼近 5%，市场对美联储加息定价七成",
+      "summary_en": "The yield on 10-year US Treasury notes climbed almost 20 basis points over the week to around 4.94% on Friday, its most elevated since 2023 and approaching levels last seen in 2007, ahead of a consumer price index reading. Traders were pricing a roughly 70% chance of a rate increase at the Federal Reserve's 16 September meeting. Two-year yields, which are more sensitive to Fed moves, rose to as high as 4.59%. The move has spilled over into bond markets worldwide.",
+      "summary_zh": "10 年期美债收益率本周上行近 20 个基点，周五报约 4.94%，为 2023 年以来最高，并逼近 2007 年的水平，市场正等待消费者价格指数数据。交易员对美联储 9 月 16 日会议加息的定价概率约为 70%。对美联储政策更敏感的 2 年期收益率一度升至 4.59%。这一走势已外溢至全球债券市场。",
+      "url": "https://nationalmortgagenews.com/articles/global-bond-selloff-sends-10-year-treasury-yields-to-cusp-of-5",
+      "also_urls": [],
+      "source": "National Mortgage News",
+      "also_sources": [],
+      "published_at": "2026-09-11T13:03:02Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "mortgage"
+      ],
+      "exposure_gp_ids": [
+        "bayview",
+        "pretium"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "0950b9f601a00507",
+      "title_en": "Kartesia completes a €304m asset-based lending fund with a helicopter financing",
+      "title_zh": "Kartesia 完成 3.04 亿欧元资产支持贷款基金，含一笔直升机融资",
+      "summary_en": "Kartesia has completed a €304 million asset-based lending fund, including a helicopter financing, according to Structured Credit Investor.",
+      "summary_zh": "据 Structured Credit Investor 报道，Kartesia 已完成一只 3.04 亿欧元的资产支持贷款基金，其中包含一笔直升机融资交易。",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOa3FKYjVhTWJpSWVtZ1J4Wlp3OHJHZmVpZFZyajFNLVJkcXo3MGNFbGRPWnJINmFaSlYwUEJpV1loeml2VDF0N1lrMnBiUVZEZDNoSkFSRFhpbXo3d1RrVU8wZjdrT2NwcUFJVkJ0V2dMaDFOelVVbEltMUFSUzM4cVQyb1E3VlBYTTNrYk0yV2ZOSVNnZzB6N0xkMWNpZklNSExOOE5Ed3hBX1NuM1BWcUV0MG8tak1pWXMyNzhvNHJpRVZ2Y01VaWJtcmd3ZlNNeGNOVVYtS3ZWNUtl",
+      "also_urls": [],
+      "source": "Structured Credit Investor",
+      "also_sources": [],
+      "published_at": "2026-09-11T10:31:19Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "abl",
+        "aircraft-leasing"
+      ],
+      "exposure_gp_ids": [
+        "basepoint",
+        "apollo",
+        "kkr",
+        "hsbc-am"
+      ],
+      "region": "Europe",
+      "importance": 2,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "80bedf8bf634bfa4",
+      "title_en": "Twelve per cent of loans to the smallest private credit borrowers are marked below 90 cents",
+      "title_zh": "最小型私募信贷借款人 12% 的贷款估值低于面值九折",
+      "summary_en": "Among private credit borrowers with $10m to $20m of EBITDA, 12% of loans are now valued below 90% of par, against about 1% in 2023, according to Houlihan Lokey's second-quarter Private Credit DataBank report. Pressure has started to spread into the core middle market, where 6% of loans to borrowers with $20m to $100m of EBITDA are priced below that level, the highest in three years, compared with 3% for borrowers above $100m. Default rates among borrowers with less than $100m of EBITDA stood at 3% on a size-weighted basis and 3.6% by borrower count, while across the wider private credit market defaults represented 0.8% of outstanding principal. Healthcare was the only sector showing elevated stress on both measures.",
+      "summary_zh": "据 Houlihan Lokey 二季度 Private Credit DataBank 报告，EBITDA 在 1,000 万至 2,000 万美元之间的私募信贷借款人中，12% 的贷款估值已低于面值的 90%，而 2023 年这一比例约为 1%。压力开始向核心中端市场蔓延：EBITDA 在 2,000 万至 1 亿美元之间的借款人中，6% 的贷款定价低于该水平，为三年来最高；EBITDA 超过 1 亿美元的借款人对应比例为 3%。EBITDA 低于 1 亿美元的借款人违约率按规模加权为 3%、按借款人数量计为 3.6%，而整体私募信贷市场的违约仅占未偿本金的 0.8%。医疗保健是唯一在两项指标上均处于高位的行业。",
+      "url": "https://alternativecreditinvestor.com/2026/09/11/private-credit-stress-rises-sharply-among-smallest-borrowers",
+      "also_urls": [],
+      "source": "Alternative Credit Investor",
+      "also_sources": [],
+      "published_at": "2026-09-11T09:26:34Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [
+        "blue-owl",
+        "otf",
+        "kkr",
+        "apollo"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "6f77d3e4af51eb8a",
+      "title_en": "Arini nears a $4bn final close on its debut European direct lending fund",
+      "title_zh": "Arini 首只欧洲直接贷款基金接近 40 亿美元最终关账",
+      "summary_en": "Arini Capital Management is approaching a final close of around $4 billion for its first European direct lending fund, Bloomberg reported, which would place it among the largest debut private credit funds raised in the region. More than $3 billion has been secured since fundraising began in March 2025, following a sourcing partnership with Lazard; British Columbia Investment Management provided a $200 million anchor commitment and said it expected to allocate at least a further $400 million to co-investments. The strategy lends to European middle-market businesses across the capital structure with a focus on senior secured debt, and the portfolio currently has no software exposure. The fund has delivered a net internal rate of return of approximately 13% since inception, against a target range of 12% to 14%.",
+      "summary_zh": "据 Bloomberg 报道，Arini Capital Management 首只欧洲直接贷款基金即将完成最终关账，规模约 40 亿美元，将跻身该地区规模最大的首募私募信贷基金之列。自 2025 年 3 月启动募资以来已获得逾 30 亿美元承诺，此前该机构与 Lazard 建立了项目来源合作；British Columbia Investment Management 提供 2 亿美元基石承诺，并表示预计将另行配置至少 4 亿美元用于共同投资。该策略沿资本结构向欧洲中端市场企业放贷，以优先担保债务为主，目前组合不含软件行业敞口。基金自成立以来净内部收益率约 13%，目标区间为 12% 至 14%。",
+      "url": "https://privateequitywire.co.uk/arini-set-to-close-debut-european-direct-lending-fund-at-4bn",
+      "also_urls": [],
+      "source": "Private Equity Wire",
+      "also_sources": [],
+      "published_at": "2026-09-11T09:08:33Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [
+        "blue-owl",
+        "otf",
+        "kkr",
+        "apollo"
+      ],
+      "region": "Europe",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "1c2fa4b22e3b5284",
+      "title_en": "Thoma Bravo adds lender protections to refinance Sophos as AI clouds software credit",
+      "title_zh": "Thoma Bravo 为 Sophos 再融资加码贷款方保护条款",
+      "summary_en": "Thoma Bravo is offering lenders a package of protections to refinance a $2.1 billion loan at cybersecurity company Sophos due in March 2027, including an omniblocker, measures preventing existing debt holders from being subordinated, and restrictions on moving assets including intellectual property away from lenders, Bloomberg reported. The proposed financing comprises a roughly $1.67 billion loan priced at 5 to 5.25 percentage points over benchmark rates and offered at 97 cents on the dollar, alongside a €350 million loan, with a $300 million privately placed junior payment-in-kind instrument and $98 million of balance-sheet cash intended to reduce leverage. Thoma Bravo has almost $9 billion of software-related debt maturing over the next two years, more than any of its private equity peers, and recently agreed to about 40 lender-friendly amendments in a refinancing for Proofpoint.",
+      "summary_zh": "据 Bloomberg 报道，Thoma Bravo 为网络安全公司 Sophos 一笔 2027 年 3 月到期的 21 亿美元贷款再融资，向贷款方提供了一揽子保护条款，包括 omniblocker 条款、防止既有债权人被劣后化的安排，以及限制将知识产权等资产转移出贷款方追索范围。拟议融资包括约 16.7 亿美元贷款，定价为基准利率上浮 5 至 5.25 个百分点、按面值 97 折发行，另有 3.5 亿欧元贷款；此外还有 3 亿美元私募配售的次级实物支付（PIK）工具及 9,800 万美元自有现金，用于压降整体杠杆。Thoma Bravo 未来两年有近 90 亿美元软件相关债务到期，规模居私募股权同业之首，近期已在 Proofpoint 的再融资中同意约 40 项有利于贷款方的修订。",
+      "url": "https://privateequitywire.co.uk/thoma-bravo-offers-lenders-more-protections-in-sophos-refinancing",
+      "also_urls": [],
+      "source": "Private Equity Wire",
+      "also_sources": [],
+      "published_at": "2026-09-11T09:07:13Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "software",
+        "private-credit"
+      ],
+      "exposure_gp_ids": [
+        "blue-owl",
+        "otf",
+        "kkr",
+        "apollo"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "4c2b374f353032ee",
+      "title_en": "CLO portfolio defaults fall to a four-year low, with software still the open question",
+      "title_zh": "CLO 组合违约率降至四年低位，软件行业仍是变数",
+      "summary_en": "Default levels in US CLO portfolios at the end of August were at their lowest in four years, with cumulative year-to-date defaults of $9.1 billion across 45 issuers, against $26.8 billion from 60 borrowers for the whole of 2025, according to a Deutsche Bank CLO market report. The bank's model-derived cumulative default rate for US CLOs stood at 1.1% through 1 September, about half the 2.5% rate at the same point in 2025, and it expects the year to finish just above 2.2%. Around a quarter of this year's defaulted assets sit with three issuers: Vibrantz Technologies, Truck Hero and Perforce Software. Deutsche Bank noted that loans priced below 90 cents in the Morningstar LSTA US Leveraged Loan Index remain elevated at 11.18%, up from 8.04% a year ago, that recovery rates are running at 55% against a five-year average of 60%, and that the soundness of the software sector remains in flux because of AI disruption.",
+      "summary_zh": "据 Deutsche Bank 的 CLO 市场报告，8 月底美国 CLO 组合违约水平为四年来最低，年初至今累计违约 91 亿美元、涉及 45 家发行人，而 2025 年全年为 268 亿美元、涉及 60 家借款人。该行模型测算的美国 CLO 累计违约率截至 9 月 1 日为 1.1%，约为 2025 年同期 2.5% 的一半，并预计全年收于略高于 2.2%。今年约四分之一的违约资产集中于三家发行人：Vibrantz Technologies、Truck Hero 与 Perforce Software。该行同时指出，Morningstar LSTA 美国杠杆贷款指数中定价低于 90 美分的贷款比例仍高达 11.18%，一年前为 8.04%；回收率为 55%，低于五年均值 60%；受 AI 冲击影响，软件行业的稳健性仍不明朗。",
+      "url": "https://finance.yahoo.com/markets/options/articles/deutsche-bank-clo-portfolio-defaults-160335441.html",
+      "also_urls": [],
+      "source": "Bing News",
+      "also_sources": [],
+      "published_at": "2026-09-11T09:03:00Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "clo",
+        "software"
+      ],
+      "exposure_gp_ids": [
+        "cifc",
+        "guggenheim",
+        "neuberger-berman",
+        "bain-capital"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "e70e653062942daf",
+      "title_en": "Bank of England puts private credit through a system-wide stress scenario",
+      "title_zh": "英格兰银行就私募信贷开展全系统压力情景测试",
+      "summary_en": "The Bank of England is running a system-wide exploratory scenario to examine how private credit and other parts of the financial system would respond to an extreme market shock, with around 50 firms asked to participate, including several major private credit managers. Responses were due this week and the Bank plans to publish a report on the findings next year. It is focusing on four areas of potential vulnerability: excessive leverage, uncertainty around valuations, mismatches between the liquidity offered to investors and that of the underlying assets, and the links between private credit and the wider financial system. Nathanaël Benjamin, its executive director for financial stability strategy and risk, said the exercise was necessary given how far the asset class has expanded since the low-interest-rate era.",
+      "summary_zh": "英格兰银行正在开展一项全系统探索性情景测试，检验私募信贷及金融体系其他环节在极端市场冲击下的反应，约 50 家机构受邀参与，其中包括数家大型私募信贷管理人。回复于本周截止，该行计划明年发布测试结果报告。测试聚焦四类潜在脆弱性：过度杠杆、估值不确定性、向投资者提供的流动性与底层资产流动性之间的错配，以及私募信贷与更广泛金融体系之间的关联。该行金融稳定策略与风险执行董事 Nathanaël Benjamin 表示，鉴于该资产类别自低利率时代以来的扩张幅度，此项测试有其必要。",
+      "url": "https://privateequitywire.co.uk/boe-says-private-credit-stress-test-could-counter-market-pessimism",
+      "also_urls": [],
+      "source": "Private Equity Wire",
+      "also_sources": [],
+      "published_at": "2026-09-11T09:01:15Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [
+        "blue-owl",
+        "otf",
+        "kkr",
+        "apollo"
+      ],
+      "region": "Europe",
+      "importance": 1,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "f717e527af90d092",
+      "title_en": "HarbourVest raises $2.4bn for private credit secondaries as the market doubles",
+      "title_zh": "HarbourVest 为私募信贷二级策略募集 24 亿美元",
+      "summary_en": "HarbourVest Partners has secured $2.4 billion of initial capital commitments for a new private credit secondary strategy across several vehicles, including a senior credit secondary fund and an opportunistic credit secondary vehicle, the Wall Street Journal reported. The firm has deployed around $500 million across five transactions, three GP-led and two initiated by limited partners, and plans to continue fundraising through 2027 without disclosing an overall target. GP-led deals accounted for approximately $17 billion of the $20.4 billion private credit secondary market in the first half of 2026, according to Evercore, more than twice the level a year earlier. Last month HarbourVest led a $730 million continuation vehicle for Willow Tree Credit Partners covering about 130 predominantly first-lien positions.",
+      "summary_zh": "据《华尔街日报》报道，HarbourVest Partners 已为一项新的私募信贷二级市场策略获得 24 亿美元首轮资本承诺，分布于多只载体，包括一只优先信贷二级基金和一只机会型信贷二级载体。该机构已在五笔交易中投出约 5 亿美元，其中三笔由 GP 发起、两笔由有限合伙人发起，并计划持续募资至 2027 年，未披露总目标规模。据 Evercore 数据，2026 年上半年私募信贷二级市场成交 204 亿美元，其中 GP 主导交易约 170 亿美元，为去年同期的两倍以上。上月该机构主导设立了一只 7.3 亿美元接续基金，承接 Willow Tree Credit Partners 约 130 项以第一留置权贷款为主的资产。",
+      "url": "https://privateequitywire.co.uk/harbourvest-raises-2-4bn-for-private-credit-secondary-strategy",
+      "also_urls": [
+        "https://news.google.com/rss/articles/CBMirwFBVV95cUxNTHZKYmk4ZTlReERaY3VRQnRpX0VlSTQ5U3U1MUdWaW9aOGpmOWVJN3hrZmZQbW5LWDlTa0s0WEEtcThORkQ1aW9EVTh0cUtneXA1My1zZzlaNWEzN1ZxWDdSSmFCd3pBQUhvMUJLVUlnM1p4Ty15RGxCWHJZR3F6Y0c5b0I2bW9IZGEtLTdESF95bVVmWWc1LW5NUnZ2LUtleXF1V1NwbVp5bEtyOUEw0gG0AUFVX3lxTE04SXZoS1RHWlRMdE15TjVQZTNLTkxZcnNXbHJsZWNuSUNNaDdDTjdtRHJWSnZDeVJILVdHVnBlOFBzdGw0VHpRQ0JpdF9VUjRsWXRud0dFWldIVnJpNnlsWDZPdWx6bGlrTVl6SUZzQ2dfZ2RGR0V0S3M2NDdINmxKd0ZLdjk0VndwX3pya3ZHT0diVWZ4N1pqanNxcFNPTXRObWh4eDIzam9SdTFXNEZoVGswUg"
+      ],
+      "source": "Private Equity Wire",
+      "also_sources": [
+        "Pulse 2.0"
+      ],
+      "published_at": "2026-09-11T08:58:32Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [
+        "blue-owl",
+        "otf",
+        "kkr",
+        "apollo"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "d180b6df59092165",
+      "title_en": "Figure closes a $316m HELOC securitisation reviewed by Setpoint",
+      "title_zh": "Figure 完成 3.16 亿美元 HELOC 证券化，Setpoint 担任复核方",
+      "summary_en": "FIGRE Trust 2026-EXP2, a $316.3 million securitisation of home equity lines of credit sponsored by Figure Technology Solutions, closed on 31 August 2026 and was rated by Morningstar DBRS. Setpoint acted as the third-party review provider on the transaction.",
+      "summary_zh": "由 Figure Technology Solutions 发起的 FIGRE Trust 2026-EXP2 已于 2026 年 8 月 31 日完成交割。该交易为规模 3.163 亿美元的房屋净值信贷额度（HELOC）证券化，由 Morningstar DBRS 评级。Setpoint 在交易中担任第三方尽职调查复核机构。",
+      "url": "https://abfjournal.com/setpoint-serves-as-third-party-diligence-platform-for-figures-316mm-heloc-securitization",
+      "also_urls": [],
+      "source": "ABF Journal",
+      "also_sources": [],
+      "published_at": "2026-09-11T07:09:10Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "abl",
+        "mortgage"
+      ],
+      "exposure_gp_ids": [
+        "basepoint",
+        "apollo",
+        "kkr",
+        "hsbc-am"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    }
+  ]
+}

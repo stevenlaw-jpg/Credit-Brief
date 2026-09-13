@@ -1,0 +1,275 @@
+{
+  "date": "2026-09-10",
+  "updated_at": "2026-09-13T14:25:50Z",
+  "items": [
+    {
+      "id": "d13392b7d5f44197",
+      "title_en": "Oil near $100 adds to the squeeze on leveraged private credit borrowers",
+      "title_zh": "油价逼近 100 美元，加重杠杆型私募信贷借款人压力",
+      "summary_en": "Oil prices near $100 a barrel could further squeeze leveraged private credit borrowers already carrying high debt costs, as investors weigh the risk that inflation pushes interest rates higher again.",
+      "summary_zh": "油价逼近每桶 100 美元，可能给本已承受高额债务成本的杠杆型私募信贷借款人带来进一步压力。投资者正在评估通胀推动利率再度走高的风险。",
+      "url": "https://msn.com/en-us/money/markets/the-oil-shock-is-testing-private-credit-borrowers-already-burdened-by-high-debt-costs/ar-AA2c190x",
+      "also_urls": [],
+      "source": "Bing News",
+      "also_sources": [],
+      "published_at": "2026-09-11T03:55:21Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [
+        "blue-owl",
+        "otf",
+        "kkr",
+        "apollo"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "f2510a488cec2369",
+      "title_en": "ICG targets €15bn for its sixth European direct lending fund",
+      "title_zh": "ICG 为第六只欧洲直接贷款基金设定 150 亿欧元目标",
+      "summary_en": "ICG is targeting €15 billion, about $17.4 billion, for its sixth European direct lending fund. The largest private credit managers continue to attract the bulk of new institutional money.",
+      "summary_zh": "ICG 为其第六只欧洲直接贷款基金设定了 150 亿欧元（约 174 亿美元）的募集目标。规模最大的私募信贷管理人仍在吸收机构新增资金的大部分。",
+      "url": "https://bloomberg.com/news/articles/2026-09-11/icg-targets-15-billion-for-latest-european-direct-lending-fund",
+      "also_urls": [],
+      "source": "Bing News",
+      "also_sources": [],
+      "published_at": "2026-09-11T03:40:00Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [
+        "blue-owl",
+        "otf",
+        "kkr",
+        "apollo"
+      ],
+      "region": "Europe",
+      "importance": 2,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "789b8c920902e064",
+      "title_en": "PennyMac brings a $364m prime RMBS with its largest collateral pool of the year",
+      "title_zh": "PennyMac 发行 3.64 亿美元优质 RMBS，为年内最大资产池",
+      "summary_en": "PMT Loan Trust 2026-J6 will issue about $363.6 million of residential mortgage-backed securities supported by first-lien, fixed-rate prime mortgages. The pool holds 294 loans, the largest the platform has issued this year, with its highest share of conforming loans at 45.1%, according to Morningstar DBRS. The class A notes are expected to pay 6.00% on the A1 tranche, 5.50% on the A2 and 5.00% on the A33. PennyMac Corp originated the loans and is the deal sponsor, seller and servicer; borrowers have weighted-average annual income of $595,649.",
+      "summary_zh": "PMT Loan Trust 2026-J6 将发行约 3.636 亿美元住房抵押贷款支持证券，底层资产为第一留置权固定利率优质抵押贷款。据 Morningstar DBRS，该资产池包含 294 笔贷款，为该平台今年最大，符合标准贷款占比 45.1%，亦为年内最高。A 类票据中，A1 档预计票息 6.00%，A2 档 5.50%，A33 档 5.00%。PennyMac Corp 为贷款发起方，并担任交易发起人、卖方与服务机构；借款人加权平均年收入为 595,649 美元。",
+      "url": "https://nationalmortgagenews.com/news/pmt-loan-trust-raises-363-6-million-in-prime-rmbs",
+      "also_urls": [],
+      "source": "National Mortgage News",
+      "also_sources": [],
+      "published_at": "2026-09-11T03:03:44Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "mortgage",
+        "abl"
+      ],
+      "exposure_gp_ids": [
+        "bayview",
+        "pretium",
+        "basepoint",
+        "apollo"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "9662eed9c4577476",
+      "title_en": "KKR Credit Income Fund reports net tangible assets of $2.3073 a unit",
+      "title_zh": "KKR Credit Income Fund 公布每单位净有形资产 2.3073 美元",
+      "summary_en": "KKR Credit Income Fund reported net tangible assets of $2.3073 per unit as at 31 August 2026.",
+      "summary_zh": "KKR Credit Income Fund 公布截至 2026 年 8 月 31 日的每单位净有形资产为 2.3073 美元。",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbHhoR0VZSlVYOU9ydFk5V2VVWTN1R1k2Q1h0Ml9mRnJJSmdEQlRRTzllUGVsV3JWcU5yLTZoY3l0UWZ3dndid0xXa0cyWUJmNURSMnN3YmoyS3VXeUJuWS1Rb3BQZTNKSjY0WTBWaHgyNmItSy1QTlNxYWZScDVrM0RQRFVnVWJ5THloci14NjFkZTdpMkNGekRpX09oeUFaZ0VNLXV3Um42d0UzRUVYUFpsQ1NYQQ",
+      "also_urls": [],
+      "source": "Kalkine",
+      "also_sources": [],
+      "published_at": "2026-09-11T00:24:31Z",
+      "gp_ids": [
+        "kkr"
+      ],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [],
+      "region": "Global",
+      "importance": 2,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "69db7c0a84326b09",
+      "title_en": "Apollo Debt Solutions BDC files an N-2/A registration amendment",
+      "title_zh": "Apollo Debt Solutions BDC 提交 N-2/A 注册修订文件",
+      "summary_en": "Apollo Debt Solutions BDC filed an N-2/A registration statement amendment with the Securities and Exchange Commission on 10 September 2026.",
+      "summary_zh": "Apollo Debt Solutions BDC 于 2026 年 9 月 10 日向美国证券交易委员会提交了 N-2/A 注册说明书修订文件。",
+      "url": "https://sec.gov/Archives/edgar/data/1837532/000119312526389271/d513890dn2a.htm",
+      "also_urls": [],
+      "source": "SEC EDGAR",
+      "also_sources": [],
+      "published_at": "2026-09-11T00:00:00Z",
+      "gp_ids": [
+        "apollo"
+      ],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "d2e69aa0edd23721",
+      "title_en": "Private credit loses ground in the contest for private equity borrowers",
+      "title_zh": "私募信贷在争夺私募股权借款人中失去优势",
+      "summary_en": "Private credit is losing its edge against competing sources of financing in the contest for private equity borrowers, according to PitchBook.",
+      "summary_zh": "据 PitchBook，在争夺私募股权借款人方面，私募信贷相对于其他融资来源正在失去优势。",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNakthU3gyWVgtWDlrTjZJN1NoZTJBYTV5WFVUNVRfMHlCZ2V5NV9zREFYQzFtSURQTkxGdEM0ZExRZ2RaMHY2UGJWdjNkT2tudjRqLU4zSm96TWNWMXpvVUxQRGV6U192MFJ0Ymp6ZGRPZ29YeU5RWlZxdV9iNGhKX0hJNl9pZmxWTTl6amt2TmFLZnNmaW5PTXh4b0g",
+      "also_urls": [],
+      "source": "PitchBook",
+      "also_sources": [],
+      "published_at": "2026-09-10T21:32:50Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "private-credit"
+      ],
+      "exposure_gp_ids": [
+        "blue-owl",
+        "otf",
+        "kkr",
+        "apollo"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "5daf6f92a38f2c23",
+      "title_en": "Berkshire Residential takes full ownership of multifamily mortgage lender MF1",
+      "title_zh": "Berkshire Residential 全资收购多户住宅抵押贷款机构 MF1",
+      "summary_en": "Berkshire Residential is taking full ownership of MF1, a multifamily mortgage lender, according to Connect CRE.",
+      "summary_zh": "据 Connect CRE 报道，Berkshire Residential 将全资持有多户住宅抵押贷款机构 MF1。",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQaUlCekpkNTVaTkwyNDU3TEFRWGxZMDJNVGRxY0hHUGpPYTFjVmFBeTFsMUVqVUtrNlU2WktEQ25wQWh1NTRkTEdQaVF6bnhLYmZLSElRX2dJZGpPZXA3MnhpT2dUcnYtVFpWM0JkOG51Nlk5YUNyaFpTRnZDZXlLTWpfRUp6QXVnM1RiS1d3RUJXSDBNbzRoUzJZYXdxal9QYlYwSEZYTG00ZTJuVWpRV1UyZw",
+      "also_urls": [],
+      "source": "Connect CRE",
+      "also_sources": [],
+      "published_at": "2026-09-10T18:28:50Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "real-estate",
+        "mortgage"
+      ],
+      "exposure_gp_ids": [
+        "pretium",
+        "kkr",
+        "apollo",
+        "pag"
+      ],
+      "region": "US",
+      "importance": 2,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "661e0484d329e01b",
+      "title_en": "CLO BWIC volumes rise week on week with Europe leading activity",
+      "title_zh": "CLO 竞价卖盘成交量环比上升，欧洲交投领先",
+      "summary_en": "Bids-wanted-in-competition volumes in the CLO secondary market rose week on week, with Europe leading activity, according to Structured Credit Investor.",
+      "summary_zh": "据 Structured Credit Investor 报道，CLO 二级市场的竞价卖盘（BWIC）成交量环比上升，其中欧洲交投领先。",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcXRSNU5VdHVETlY1dE1scnV5dEZ4VzkyTHE5RWlRV0lWTGRSY2R4Y2oySURsd3lHc2FTNHBwNG40d0dDcVZNLXJzSFdzQ3lFeV9OZVVxUVBmbVowUUtpVXcyTzVsZF9xRXVvVGhYVmcxVFhKTmZ2VHFhWmIyUkpnTWQtNVNmWkJpSjBfVnpVWTJZZXhULUtsZG1FU0R0UlAtUzhrTFNoRTdfTEVPYlNtZ3JOUHZTWU9sZzJnb2lRcE9xLVk",
+      "also_urls": [],
+      "source": "Structured Credit Investor",
+      "also_sources": [],
+      "published_at": "2026-09-10T16:37:45Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "clo"
+      ],
+      "exposure_gp_ids": [
+        "cifc",
+        "guggenheim",
+        "neuberger-berman",
+        "bain-capital"
+      ],
+      "region": "Europe",
+      "importance": 2,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "5e17d66d9c3946bd",
+      "title_en": "Downing adds a £500m funding line and a head of commercial real estate lending",
+      "title_zh": "Downing 新增 5 亿英镑融资额度并任命商业地产贷款主管",
+      "summary_en": "Downing has launched a £500 million institutional funding line to increase deployment capacity on its private credit platform, and appointed George Cotterell as partner and head of commercial real estate lending; he previously worked at Venn Partners and ESR Europe. The £2.6 billion firm has committed £1.5 billion to private credit transactions since 2010, lending across residential and commercial real estate and structured credit.",
+      "summary_zh": "Downing 启动了一条 5 亿英镑的机构融资额度，以扩大其私募信贷平台的投放能力，同时任命 George Cotterell 为合伙人兼商业地产贷款主管，其此前任职于 Venn Partners 与 ESR Europe。这家管理规模 26 亿英镑的机构自 2010 年以来已向私募信贷交易投入 15 亿英镑，放贷范围涵盖住宅与商业地产以及结构性信贷。",
+      "url": "https://alternativecreditinvestor.com/2026/09/10/downing-expands-credit-platform-with-500m-funding-line",
+      "also_urls": [
+        "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQUhzTWF4WGVXS0NQRXgyU2pzXzRpOC11UGFPUFBKcUtQOEdXcDNta1djT05sZnVhTVlVY2dZNXUyNFVhcm10bkpCOW5UVmF6Si00NnRRTzhfd1ZoQ3lUWm4xbmItcFRYeGRCZVNyVFktYmZiVlR2bEZXMmtCY1MwY1A3VFR5OTYyR2lDRnJYajlOX1Q3UklncEx5WHdaeVk0enM1UVZkWUVYZw"
+      ],
+      "source": "Alternative Credit Investor",
+      "also_sources": [
+        "The Intermediary"
+      ],
+      "published_at": "2026-09-10T15:22:50Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "private-credit",
+        "real-estate"
+      ],
+      "exposure_gp_ids": [
+        "blue-owl",
+        "otf",
+        "kkr",
+        "apollo"
+      ],
+      "region": "Europe",
+      "importance": 2,
+      "grounded_on": "article",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    },
+    {
+      "id": "de30408ac2d5532e",
+      "title_en": "UK house prices stay under pressure as mortgage costs rise",
+      "title_zh": "抵押贷款成本上升，英国房价继续承压",
+      "summary_en": "UK house prices remain under pressure as mortgage costs rise, according to Bloomberg.",
+      "summary_zh": "据 Bloomberg 报道，随着抵押贷款成本上升，英国房价继续承压。",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNUVliemFMVWtoZU9JczI5N19fV0NGQTdkNTdON3NhNkNsamJuSVdlMnZHaldDUTlZcXhsMEVrUjZCVmhHTmxYSzIzVkREa3pTd2YzUDF2RGFGUzdnRzg5TmJpdUNldHNSellORFRTWXRtdWdZNFpXalBXZmZRYkpaSHo0S1Y3QUdMM3hETGZ2QzNNNGVOTlNSZE1yVEd3TUM5R1YzRkMyUnJ1WGR0N3NRdw",
+      "also_urls": [],
+      "source": "Bloomberg.com",
+      "also_sources": [],
+      "published_at": "2026-09-10T06:37:00Z",
+      "gp_ids": [],
+      "sector_ids": [
+        "mortgage"
+      ],
+      "exposure_gp_ids": [
+        "bayview",
+        "pretium"
+      ],
+      "region": "Europe",
+      "importance": 2,
+      "grounded_on": "snippet",
+      "rescued_by_agent3": false,
+      "reason": "filter and summary applied by hand against config/prompts/ (no API key in this build)"
+    }
+  ]
+}

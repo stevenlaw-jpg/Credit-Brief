@@ -1,0 +1,114 @@
+{
+  "generated_at": "2026-09-13T14:25:50Z",
+  "timezone": "America/New_York",
+  "retention_days": 90,
+  "update_interval_hours": 3,
+  "default_language": "en",
+  "names": {
+    "gps": {
+      "blue-owl": {
+        "en": "Blue Owl",
+        "zh": "Blue Owl"
+      },
+      "otf": {
+        "en": "Blue Owl Tech Finance",
+        "zh": "Blue Owl Tech Finance"
+      },
+      "kkr": {
+        "en": "KKR",
+        "zh": "KKR"
+      },
+      "apollo": {
+        "en": "Apollo",
+        "zh": "Apollo"
+      },
+      "bain-capital": {
+        "en": "Bain Capital",
+        "zh": "Bain Capital"
+      },
+      "neuberger-berman": {
+        "en": "Neuberger Berman",
+        "zh": "Neuberger Berman"
+      },
+      "hsbc-am": {
+        "en": "HSBC AM",
+        "zh": "HSBC AM"
+      },
+      "pag": {
+        "en": "PAG",
+        "zh": "PAG"
+      },
+      "guggenheim": {
+        "en": "Guggenheim",
+        "zh": "Guggenheim"
+      },
+      "pretium": {
+        "en": "Pretium",
+        "zh": "Pretium"
+      },
+      "bayview": {
+        "en": "Bayview",
+        "zh": "Bayview"
+      },
+      "cifc": {
+        "en": "CIFC",
+        "zh": "CIFC"
+      },
+      "basepoint": {
+        "en": "BasePoint",
+        "zh": "BasePoint"
+      }
+    },
+    "sectors": {
+      "software": {
+        "en": "Software",
+        "zh": "软件"
+      },
+      "private-credit": {
+        "en": "Private credit",
+        "zh": "私募信贷"
+      },
+      "gp-stakes": {
+        "en": "GP stakes",
+        "zh": "GP 股权投资"
+      },
+      "aircraft-leasing": {
+        "en": "Aircraft leasing",
+        "zh": "飞机租赁"
+      },
+      "abl": {
+        "en": "Asset-based lending",
+        "zh": "资产支持贷款"
+      },
+      "real-estate": {
+        "en": "Real estate credit",
+        "zh": "房地产信贷"
+      },
+      "mortgage": {
+        "en": "Mortgage",
+        "zh": "抵押贷款"
+      },
+      "clo": {
+        "en": "CLO",
+        "zh": "CLO"
+      }
+    }
+  },
+  "dates": [
+    {
+      "date": "2026-09-12",
+      "count": 2,
+      "updated_at": "2026-09-13T14:25:50Z"
+    },
+    {
+      "date": "2026-09-11",
+      "count": 14,
+      "updated_at": "2026-09-13T14:25:50Z"
+    },
+    {
+      "date": "2026-09-10",
+      "count": 10,
+      "updated_at": "2026-09-13T14:25:50Z"
+    }
+  ]
+}

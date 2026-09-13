@@ -1,0 +1,155 @@
+# Runtime knobs and the source list. See BUILD_SPEC.md §5.2, §6.5, §7.5.
+
+timezone: America/New_York          # the dashboard date is the US Eastern calendar day
+retention_days: 90                  # rolling window; older day-files are deleted
+update_interval_hours: 3            # cron cadence, surfaced in the UI header
+lookback_hours: 8                   # deliberate overlap with the 3h cron
+default_language: en
+
+limits:
+  max_new_items_per_run: 20         # cap on summariser calls
+  agent2_batch_size: 12
+  agent3_max: 25                    # shortlist cap
+  agent3_rescue_warn_ratio: 0.40    # three runs above this => loud warning
+  max_queries: 60
+  per_query_results: 25
+  article_fetch_timeout: 20
+  feed_timeout: 20
+  min_body_chars: 300               # below this, fall back to the snippet
+
+models:
+  agent2: claude-haiku-4-5-20251001
+  agent3: claude-sonnet-5
+  summarize: claude-sonnet-5
+  fallbacks:
+    claude-sonnet-5: [claude-sonnet-4-6, claude-sonnet-4-5-20250929]
+    claude-haiku-4-5-20251001: [claude-haiku-4-5]
+
+http:
+  user_agent: "credit-brief/1.0 (+https://github.com/) news aggregator"
+  # EDGAR requires a descriptive UA with a contact address; supplied via EDGAR_USER_AGENT.
+  edgar_user_agent_env: EDGAR_USER_AGENT
+  max_retries: 2
+  backoff_seconds: 2
+
+# --------------------------------------------------------------------------
+# Sources. `priority` decides which copy of a duplicated story becomes the
+# primary link (higher wins). Every fetcher is isolated: a failure logs a
+# warning and contributes nothing. One broken feed must never fail the run.
+# --------------------------------------------------------------------------
+sources:
+
+  # ---- priority 4: primary documents -------------------------------------
+  - id: edgar-fulltext
+    type: edgar
+    priority: 4
+    enabled: true
+    forms: ["8-K", "10-Q", "10-K", "424B2", "N-2"]
+    # Tickers / entity names searched in EDGAR full-text search.
+    entities:
+      - Blue Owl Technology Finance
+      - Blue Owl Capital Corporation
+      - FS KKR Capital
+      - Bain Capital Specialty Finance
+      - Blue Owl Credit Income
+      - MidCap Financial Investment
+      - Apollo Debt Solutions
+      - KKR Real Estate Finance Trust
+
+  # ---- priority 4: regulators --------------------------------------------
+  # A rule affecting private credit, BDCs, CLOs or mortgages is a Tier 1 event,
+  # and these are the first-party announcements of exactly that. Most releases
+  # match nothing and are dropped by the rule layer at no cost.
+  - id: sec-press
+    type: rss
+    priority: 4
+    enabled: true
+    name: SEC
+    url: https://www.sec.gov/news/pressreleases.rss
+  - id: fed-press
+    type: rss
+    priority: 4
+    enabled: true
+    name: Federal Reserve
+    url: https://www.federalreserve.gov/feeds/press_all.xml
+
+  # ---- priority 3: trade press -------------------------------------------
+  # NOTE: Private Debt Investor's public feed currently returns no entries — the
+  # substance sits behind their subscription. It is left enabled because it costs
+  # one request and may return; the README records it as a known gap.
+  - id: pdi
+    type: rss
+    priority: 3
+    enabled: true
+    name: Private Debt Investor
+    url: https://www.privatedebtinvestor.com/feed/
+  - id: alt-credit
+    type: rss
+    priority: 3
+    enabled: true
+    name: Alternative Credit Investor
+    url: https://alternativecreditinvestor.com/feed/
+  - id: private-equity-wire-credit
+    type: rss
+    priority: 3
+    enabled: true
+    name: Private Equity Wire
+    url: https://www.privateequitywire.co.uk/feed/
+  - id: abf-journal
+    type: rss
+    priority: 3
+    enabled: true
+    name: ABF Journal
+    url: https://www.abfjournal.com/feed/
+  - id: housingwire
+    type: rss
+    priority: 3
+    enabled: true
+    name: HousingWire
+    url: https://www.housingwire.com/feed/
+  - id: national-mortgage-news
+    type: rss
+    priority: 3
+    enabled: true
+    name: National Mortgage News
+    url: https://www.nationalmortgagenews.com/feed?rss=true
+
+  # ---- priority 2 / 1: aggregators ---------------------------------------
+  - id: bing-news
+    type: bing_news
+    priority: 2
+    enabled: true
+    name: Bing News
+    endpoint: "https://www.bing.com/news/search?q={query}&format=RSS&setmkt=en-US"
+  - id: google-news
+    type: google_news
+    priority: 1
+    enabled: true
+    name: Google News
+    endpoint: "https://news.google.com/rss/search?q={query}&hl=en-US&gl=US&ceid=US:en"
+
+# Query-time credit qualifier appended to GP queries.
+query_credit_qualifier: "(credit OR lending OR loan OR BDC OR fund OR CLO OR debt OR financing)"
+
+# URL tracking parameters stripped during canonicalisation (§10.2).
+tracking_params:
+  - utm_source
+  - utm_medium
+  - utm_campaign
+  - utm_term
+  - utm_content
+  - utm_id
+  - fbclid
+  - gclid
+  - mc_cid
+  - mc_eid
+  - ref
+  - ref_src
+  - source
+  - cmpid
+  - cmp
+  - sref
+  - __source
+  - guccounter
+  - amp
+  - oc

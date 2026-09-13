@@ -1,0 +1,1026 @@
+# =============================================================================
+# The entity model. See BUILD_SPEC.md §4.
+#
+# This file is the geology under everything: Agent 1 builds its queries from it,
+# the deterministic rule layer matches on it, and Agents 2 and 3 receive the
+# `credit_scope` prose verbatim in their system prompts. An error here is
+# systematic, not incidental.
+#
+# Alias semantics (see pipeline/entities.py):
+#   strong_aliases  a word-boundary hit is sufficient on its own
+#   weak_aliases    needs a co-occurring context_term in the same text
+#   context_terms   evidence that this is the right entity
+#   exclude_terms   a hit here vetoes the GP entirely, however strong the alias
+#   vehicles        funds / BDCs / tickers; treated as strong aliases
+#
+# Matching is word-boundary based. Aliases that look like acronyms (^[A-Z]{2,6}$)
+# are matched case-sensitively; everything else is case-insensitive.
+# =============================================================================
+
+gps:
+
+  # ---------------------------------------------------------------- Blue Owl
+  - id: blue-owl
+    name: Blue Owl
+    name_zh: Blue Owl
+    name_short: Blue Owl
+    name_short_zh: Blue Owl
+    strong_aliases:
+      - Blue Owl
+      - Blue Owl Capital
+      - Blue Owl Credit
+      - Blue Owl Capital Corporation
+      - GP Strategic Capital
+      - Dyal Capital
+    weak_aliases: []
+    context_terms:
+      - credit
+      - lending
+      - direct lending
+      - BDC
+      - private credit
+      - GP stakes
+      - Doug Ostrover
+      - Marc Lipschultz
+    exclude_terms: []
+    vehicles:
+      - OBDC
+      - OBDE
+      - OCIC
+      - Blue Owl Capital Corporation
+      - Blue Owl Credit Income Corp
+      - Blue Owl Technology Income Corp
+    sectors: [software, private-credit, gp-stakes, clo, real-estate]
+    confidence: high
+    credit_scope: >
+      IN SCOPE: Blue Owl Credit and its BDCs (OBDC, OBDE, OCIC, OTF, OTIC) —
+      direct lending, technology/software lending, NAV and non-accrual disclosures,
+      dividends, credit facilities, fund closes; GP Strategic Capital (formerly Dyal),
+      because GP stakes is a tracked sub-sector; firm-level events that bear on the
+      credit platform (credit leadership, regulation, litigation, fundraising, ratings).
+      OUT OF SCOPE: Blue Owl's net-lease real-estate equity business and its
+      digital-infrastructure equity business, unless the story is specifically about
+      financing, a debt raise or a credit vehicle. A net-lease property acquisition is
+      real-estate equity and must be excluded.
+
+  # ------------------------------------------- Blue Owl Technology Finance (OTF)
+  - id: otf
+    name: Blue Owl Technology Finance
+    name_zh: Blue Owl Technology Finance
+    name_short: Blue Owl Tech Finance
+    name_short_zh: Blue Owl Tech Finance
+    strong_aliases:
+      - Blue Owl Technology Finance
+      - Blue Owl Technology Finance Corp
+      - Blue Owl Technology Income
+      - Owl Rock Technology Finance
+    weak_aliases:
+      - OTF
+      - OTIC
+    context_terms:
+      - Blue Owl
+      - BDC
+      - business development company
+      - NAV
+      - net asset value
+      - NYSE
+      - non-accrual
+      - technology lending
+      - software lending
+      - dividend
+    exclude_terms:
+      - one-third
+      - open to facility
+    vehicles:
+      - Blue Owl Technology Finance Corp II
+      - Blue Owl Technology Income Corp
+    sectors: [software, private-credit]
+    confidence: high
+    credit_scope: >
+      IN SCOPE: everything this vehicle does — it is a single-strategy technology /
+      software lending BDC. Quarterly results, NAV per share, non-accruals, dividend
+      declarations, portfolio credit events, credit facilities, SEC filings, mergers
+      with sister vehicles, rating actions.
+      OUT OF SCOPE: nothing on business-line grounds. The only risk is the ticker
+      "OTF" colliding with unrelated uses of those three letters, so require Blue Owl
+      or BDC context before accepting a bare ticker match.
+
+  # -------------------------------------------------------------------- KKR
+  - id: kkr
+    name: KKR
+    name_zh: KKR
+    name_short: KKR
+    name_short_zh: KKR
+    strong_aliases:
+      - KKR
+      - Kohlberg Kravis Roberts
+      - KKR Credit
+      - FS KKR
+      - Global Atlantic
+    weak_aliases: []
+    context_terms:
+      - credit
+      - lending
+      - loan
+      - debt
+      - BDC
+      - CLO
+      - asset-based finance
+    exclude_terms: []
+    vehicles:
+      - FSK
+      - FS KKR Capital Corp
+      - KKR Real Estate Finance Trust
+      - KREF
+      - KKR FS Income Trust
+    sectors: [software, private-credit, aircraft-leasing, abl, real-estate, clo]
+    confidence: high
+    credit_scope: >
+      IN SCOPE: KKR Credit in all its forms — direct lending, leveraged credit,
+      asset-based finance, CLO management, opportunistic and junior credit; FS KKR
+      Capital Corp (FSK); KKR Real Estate Finance Trust (KREF) and real-estate credit;
+      Global Atlantic treated as the insurance balance sheet that funds credit;
+      aviation financings and aircraft-backed lending; and firm-level events that
+      affect the credit platform (credit leadership changes, regulation, litigation,
+      credit fundraising, ratings).
+      OUT OF SCOPE: private-equity buyouts and exits, infrastructure equity,
+      real-estate equity, growth and impact equity, and portfolio-company news that
+      carries no credit angle. "KKR agrees to acquire company X" is a buyout and must
+      be excluded unless the story is explicitly about the debt financing package.
+
+  # ------------------------------------------------------------------ Apollo
+  - id: apollo
+    name: Apollo Global Management
+    name_zh: Apollo
+    name_short: Apollo
+    name_short_zh: Apollo
+    strong_aliases:
+      - Apollo Global Management
+      - Apollo Global
+      - Apollo Credit
+      - Atlas SP
+      - MidCap Financial
+      - Athene
+    weak_aliases:
+      - Apollo
+    context_terms:
+      - credit
+      - lending
+      - loan
+      - debt
+      - private credit
+      - BDC
+      - CLO
+      - securitization
+      - securitisation
+      - asset-backed
+      - Marc Rowan
+      - Athene
+      - annuity
+    exclude_terms:
+      - Apollo 11
+      - Apollo 13
+      - NASA
+      - Apollo Hospitals
+      - Apollo Tyres
+      - Apollo Theater
+      - Apollo Theatre
+      - Apollo.io
+      - Apollo Micro Systems
+      - Apollo programme
+      - Apollo program
+      - lunar
+      - moon landing
+      - Apollo Pharmacy
+    vehicles:
+      - Apollo Debt Solutions
+      - Apollo Debt Solutions BDC
+      - MidCap Financial Investment Corp
+      - MFIC
+      - Atlas SP Partners
+      - Apollo Diversified Credit
+    sectors: [software, private-credit, aircraft-leasing, abl, real-estate, clo]
+    confidence: high
+    credit_scope: >
+      IN SCOPE: the Apollo credit platform — direct lending and origination, Atlas SP,
+      MidCap Financial, Apollo Debt Solutions BDC, CLOs and structured credit,
+      real-estate credit, asset-backed finance including aviation ABS; Athene as the
+      insurance balance sheet that funds that credit; firm-level credit events
+      (regulation, ratings, credit leadership, credit fundraising).
+      OUT OF SCOPE: private-equity buyouts, infrastructure and aviation-infrastructure
+      equity (the Atlantic Aviation / FBO transaction is infrastructure equity, not
+      aircraft-leasing credit, and must be excluded), sports and other equity
+      investments, and hybrid-value equity deals with no credit angle.
+
+  # ------------------------------------------------------------ Bain Capital
+  - id: bain-capital
+    name: Bain Capital Credit
+    name_zh: Bain Capital
+    name_short: Bain Capital
+    name_short_zh: Bain Capital
+    strong_aliases:
+      - Bain Capital Credit
+      - Bain Capital Specialty Finance
+      - Bain Capital Structured Credit
+      - JB Aircraft Finance
+    weak_aliases:
+      - Bain Capital
+      - Bain
+    context_terms:
+      - credit
+      - lending
+      - loan
+      - debt
+      - private credit
+      - BDC
+      - CLO
+      - structured credit
+      - special situations
+      - aircraft
+      - aviation finance
+    exclude_terms:
+      - Bain & Company
+      - Bain & Co
+      - Bain and Company
+      - Bain Capital Ventures
+      - consultancy
+      - consulting firm
+    vehicles:
+      - BCSF
+      - Bain Capital Specialty Finance
+      - Bain Capital Private Credit
+    sectors: [software, private-credit, aircraft-leasing, clo]
+    confidence: high
+    credit_scope: >
+      IN SCOPE: Bain Capital Credit — private credit and direct lending, Bain Capital
+      Specialty Finance (BCSF), structured credit and CLOs, special situations and
+      distressed, and JB Aircraft Finance (launched June 2026), which is the firm's
+      aircraft-leasing credit vehicle.
+      OUT OF SCOPE: Bain Capital Private Equity buyouts, Bain Capital Ventures,
+      Bain Capital Real Estate equity, Bain Capital Life Sciences — and, critically,
+      Bain & Company, the management consultancy, which is a different firm entirely.
+
+  # -------------------------------------------------------- Neuberger Berman
+  - id: neuberger-berman
+    name: Neuberger Berman
+    name_zh: Neuberger Berman
+    name_short: Neuberger Berman
+    name_short_zh: Neuberger Berman
+    strong_aliases:
+      - Neuberger Berman
+      - NB Private Debt
+      - NB Private Markets
+      - NB Alternatives
+      - NB Capital Solutions
+      - Dyal Capital Partners
+    weak_aliases:
+      - Neuberger
+    context_terms:
+      - private credit
+      - private debt
+      - direct lending
+      - CLO
+      - credit
+      - loan
+      - GP stakes
+      - strategic capital
+      - co-investment
+    exclude_terms:
+      - mutual fund
+      - ETF launch
+      - equity income fund
+      - wealth management product
+    vehicles:
+      - NBXG
+      - Neuberger Berman Private Debt Fund
+      - NB Private Debt Fund
+    sectors: [software, private-credit, gp-stakes, clo]
+    confidence: high
+    credit_scope: >
+      IN SCOPE: Neuberger Berman's private credit and private debt business, its CLO
+      management platform, and its strategic-capital / GP-stakes activity (NB has the
+      Dyal-adjacent lineage and GP stakes is a tracked sub-sector).
+      OUT OF SCOPE: NB's mutual funds, long-only equity strategies, ETF launches and
+      retail wealth products. Never match on the bare letters "NB" — only on
+      "Neuberger Berman" or a named NB business unit.
+
+  # ------------------------------------------------------------------ HSBC AM
+  - id: hsbc-am
+    name: HSBC Asset Management
+    name_zh: HSBC 资产管理
+    name_short: HSBC AM
+    name_short_zh: HSBC AM
+    strong_aliases:
+      - HSBC Asset Management
+      - HSBC Alternatives
+      - HSBC Global Asset Management
+      - HSBC Private Credit
+    weak_aliases:
+      - HSBC AM
+    context_terms:
+      - private credit
+      - private debt
+      - direct lending
+      - asset-based lending
+      - infrastructure debt
+      - real estate debt
+      - alternatives
+      - fund
+    exclude_terms:
+      - pre-tax profit
+      - group results
+      - retail banking
+      - branch closures
+      - current account
+      - HSBC UK Bank
+      - Hang Seng Bank
+      - net interest margin
+    vehicles:
+      - HSBC Global Investment Funds
+    sectors: [private-credit, abl, real-estate]
+    confidence: medium
+    credit_scope: >
+      IN SCOPE: HSBC Asset Management's alternatives franchise — private credit and
+      direct lending, asset-based lending, infrastructure debt, real-estate debt, and
+      fund launches or closes within those strategies.
+      OUT OF SCOPE: HSBC the bank. Group earnings, retail and commercial banking,
+      branch networks, net interest margin, regulatory matters concerning the banking
+      entity, and wealth-product distribution are not in scope. The test is whether the
+      asset-management arm is the subject of the story, not merely the parent brand.
+
+  # --------------------------------------------------------------------- PAG
+  - id: pag
+    name: PAG
+    name_zh: PAG
+    name_short: PAG
+    name_short_zh: PAG
+    strong_aliases:
+      - PAG Credit
+      - PAG Credit & Markets
+      - PAG Asia Capital
+      - Pacific Alliance Group
+    weak_aliases:
+      - PAG
+    context_terms:
+      - Hong Kong
+      - Asia
+      - credit
+      - private credit
+      - lending
+      - loan
+      - debt
+      - Weijian Shan
+      - special situations
+      - real estate credit
+    exclude_terms:
+      - Penske
+      - Penske Automotive
+      - dealership
+      - Punjab
+      - Publicis
+      - automotive group
+    vehicles:
+      - PAG Loan Fund
+      - PAG Asia Credit
+    sectors: [private-credit, real-estate]
+    confidence: high
+    credit_scope: >
+      IN SCOPE: PAG Credit & Markets — private credit and direct lending, real-estate
+      credit, special situations and distressed, and credit fund closes. PAG is
+      Hong Kong-based and its credit news flow is largely Asian; that news is in scope
+      because PAG is a tracked holding, not because Asia is a target region.
+      OUT OF SCOPE: PAG private-equity buyouts, PAG real-estate equity, and the
+      unrelated Penske Automotive Group, which also trades under the letters PAG.
+
+  # -------------------------------------------------------------- Guggenheim
+  - id: guggenheim
+    name: Guggenheim Investments
+    name_zh: Guggenheim
+    name_short: Guggenheim
+    name_short_zh: Guggenheim
+    strong_aliases:
+      - Guggenheim Investments
+      - Guggenheim Partners
+      - Guggenheim Credit
+      - Guggenheim Aviation
+    weak_aliases:
+      - Guggenheim
+    context_terms:
+      - credit
+      - lending
+      - loan
+      - debt
+      - CLO
+      - structured credit
+      - corporate credit
+      - aviation finance
+      - aircraft
+      - fixed income
+      - Anne Walsh
+    exclude_terms:
+      - Guggenheim Museum
+      - Guggenheim Fellowship
+      - Guggenheim Fellow
+      - Bilbao
+      - Solomon R. Guggenheim
+      - exhibition
+      - Peggy Guggenheim
+      - art museum
+    vehicles:
+      - Guggenheim Credit Income Fund
+      - GCIF
+      - Guggenheim Aviation Investment Fund
+    sectors: [private-credit, aircraft-leasing, clo]
+    confidence: medium
+    credit_scope: >
+      IN SCOPE: Guggenheim Investments and Guggenheim Partners on the credit side —
+      corporate credit, private credit, CLO management, structured credit and ABS, and
+      the Guggenheim Aviation lineage of aircraft and private-jet finance.
+      OUT OF SCOPE: the Solomon R. Guggenheim Museum, the Guggenheim Fellowship, and
+      Guggenheim Securities' investment-banking advisory mandates, unless the mandate
+      is itself a credit-market event such as a restructuring or a debt exchange.
+
+  # ----------------------------------------------------------------- Pretium
+  - id: pretium
+    name: Pretium Partners
+    name_zh: Pretium
+    name_short: Pretium
+    name_short_zh: Pretium
+    strong_aliases:
+      - Pretium Partners
+      - Pretium
+      - Progress Residential
+    weak_aliases: []
+    context_terms:
+      - residential
+      - mortgage
+      - single-family
+      - credit
+      - securitization
+      - securitisation
+      - real estate
+    exclude_terms: []
+    vehicles:
+      - Progress Residential
+      - Pretium Residential Credit
+    sectors: [real-estate, mortgage, private-credit]
+    confidence: high
+    credit_scope: >
+      IN SCOPE: everything Pretium does — residential credit, mortgage and
+      non-performing-loan portfolios, single-family rental (Progress Residential) and
+      its securitisations, build-to-rent financing, and corporate credit activity.
+      This is a single-strategy manager for our purposes; the constraint is homonym
+      protection, not business-line filtering.
+      OUT OF SCOPE: unrelated uses of the word "pretium" (it is Latin for "price" and
+      appears in unrelated company names and pharmaceutical contexts).
+
+  # ----------------------------------------------------------------- Bayview
+  - id: bayview
+    name: Bayview Asset Management
+    name_zh: Bayview
+    name_short: Bayview
+    name_short_zh: Bayview
+    strong_aliases:
+      - Bayview Asset Management
+      - Bayview Asset Mgmt
+      - Lakeview Loan Servicing
+    weak_aliases:
+      - Bayview
+    context_terms:
+      - mortgage
+      - MSR
+      - mortgage servicing
+      - RMBS
+      - whole loan
+      - Lakeview
+      - securitization
+      - securitisation
+      - residential credit
+      - servicer
+    exclude_terms:
+      - Bayview Hospital
+      - Bayview Avenue
+      - Johns Hopkins Bayview
+      - Bayview Park
+      - Bayview neighborhood
+      - Bayview-Hunters Point
+    vehicles:
+      - Bayview MSR Opportunity
+      - Lakeview Loan Servicing
+    sectors: [mortgage, real-estate, abl]
+    confidence: high
+    credit_scope: >
+      IN SCOPE: everything Bayview Asset Management does — mortgage servicing rights,
+      whole-loan portfolios, RMBS and non-agency securitisation, Lakeview Loan
+      Servicing, residential and commercial mortgage credit, and its bank
+      partnerships and capital raises. Single-strategy for our purposes.
+      OUT OF SCOPE: the many place names, hospitals and streets called Bayview.
+
+  # -------------------------------------------------------------------- CIFC
+  - id: cifc
+    name: CIFC Asset Management
+    name_zh: CIFC
+    name_short: CIFC
+    name_short_zh: CIFC
+    strong_aliases:
+      - CIFC Asset Management
+      - CIFC LLC
+    weak_aliases:
+      - CIFC
+    context_terms:
+      - CLO
+      - credit
+      - leveraged loan
+      - collateralized loan obligation
+      - collateralised loan obligation
+      - structured credit
+      - loan
+      - debt
+    exclude_terms: []
+    vehicles:
+      - CIFC Funding
+      - CIFC Falcon
+    sectors: [clo, private-credit]
+    confidence: high
+    credit_scope: >
+      IN SCOPE: everything CIFC does — CLO issuance, refinancings and resets, US and
+      European CLO platforms, corporate credit and opportunistic credit funds,
+      leveraged-loan market activity, and ownership or corporate events at the firm.
+      Single-strategy for our purposes.
+      OUT OF SCOPE: nothing on business-line grounds, but require a credit context
+      term so that the bare acronym does not match unrelated initialisms.
+
+  # --------------------------------------------------------------- Basepoint
+  - id: basepoint
+    name: BasePoint Capital
+    name_zh: BasePoint
+    name_short: BasePoint
+    name_short_zh: BasePoint
+    strong_aliases:
+      - BasePoint Capital
+      - Basepoint Capital
+      - BasePoint Group
+      - Basepoint Group
+    weak_aliases:
+      - Basepoint
+      - BasePoint
+    context_terms:
+      - asset-based
+      - asset backed
+      - specialty finance
+      - speciality finance
+      - merchant cash advance
+      - small business lending
+      - securitization
+      - securitisation
+      - credit facility
+      - originator
+      - International Personal Finance
+    exclude_terms:
+      - Business Centres
+      - Business Centers
+      - workspace
+      - office space
+      - serviced office
+      - coworking
+    vehicles:
+      - International Personal Finance
+    sectors: [abl, private-credit]
+    confidence: medium
+    credit_scope: >
+      IN SCOPE: BasePoint Capital / BasePoint Group (New York) — asset-based financing
+      to specialty-finance originators, merchant cash advance and small-business ABS,
+      forward-flow and warehouse facilities, securitisations, and its ownership of
+      International Personal Finance following the December 2025 acquisition.
+      OUT OF SCOPE: Basepoint Business Centres, the UK serviced-office operator, which
+      shares the name and nothing else.
+
+# =============================================================================
+# Sub-sectors. `requires_credit_context: true` means a keyword hit only counts
+# when a credit-context term also appears, or a GP has already matched — the
+# word "software" on its own is not a credit story.
+# =============================================================================
+
+sectors:
+
+  - id: software
+    name: Software
+    name_zh: 软件
+    requires_credit_context: true
+    confidence: high
+    keywords:
+      - software
+      - SaaS
+      - enterprise software
+      - technology lending
+      - tech lending
+      - software borrower
+      - recurring revenue loan
+      - ARR loan
+      - venture debt
+      - technology borrower
+    primary_gps: [blue-owl, otf, kkr, apollo, neuberger-berman]
+    scope: >
+      Lending to software and technology companies: recurring-revenue and ARR-based
+      facilities, unitranche loans to sponsor-backed software businesses, technology
+      BDC portfolios, venture debt, and the credit quality of software borrowers
+      (including the effect of AI on their revenue durability and refinancing ability).
+
+  - id: private-credit
+    name: Private credit
+    name_zh: 私募信贷
+    requires_credit_context: false
+    confidence: high
+    keywords:
+      - private credit
+      - private debt
+      - direct lending
+      - direct lender
+      - unitranche
+      - BDC
+      - business development company
+      - middle market lending
+      - mid-market lending
+      - non-bank lender
+      - senior secured loan
+      - broadly syndicated loan
+      - leveraged loan
+      - non-accrual
+      - PIK
+      - payment-in-kind
+    primary_gps: [blue-owl, otf, kkr, apollo, bain-capital, neuberger-berman, hsbc-am, pag]
+    scope: >
+      The private-credit and direct-lending market: fund raises and closes, BDC
+      results and NAV marks, non-accruals and PIK income, deal flow and competition
+      with the syndicated market, bank / private-credit partnerships, leverage and
+      liquidity at credit vehicles, regulation of private credit and BDCs, and
+      evidence of stress or opportunity in the asset class.
+
+  - id: gp-stakes
+    name: GP stakes
+    name_zh: GP 股权投资
+    requires_credit_context: false
+    confidence: medium
+    keywords:
+      - GP stakes
+      - GP stake
+      - GP staking
+      - strategic capital
+      - minority stake in a manager
+      - stake in the manager
+      - Dyal
+      - Bonaccord
+      - Blue Owl GP Strategic Capital
+      - manager stake sale
+    primary_gps: [blue-owl, neuberger-berman]
+    scope: >
+      Minority stakes in alternative-asset managers themselves: GP-stake fund raises,
+      stake sales by managers, continuation vehicles for GP-stake portfolios, and the
+      valuation and financing of those stakes. Blue Owl's GP Strategic Capital
+      (formerly Dyal) is the anchor holding here.
+
+  - id: aircraft-leasing
+    name: Aircraft leasing
+    name_zh: 飞机租赁
+    requires_credit_context: false
+    confidence: medium
+    keywords:
+      - aircraft leasing
+      - aircraft lessor
+      - aircraft finance
+      - aircraft lending
+      - aviation finance
+      - aviation lending
+      - aviation ABS
+      - aircraft ABS
+      - EETC
+      - aircraft portfolio financing
+      - engine leasing
+      - private jet finance
+      - sale-leaseback aircraft
+    primary_gps: [guggenheim, bain-capital, kkr, apollo]
+    scope: >
+      Financing secured on aircraft: operating-lease portfolios, aviation ABS and
+      EETC issuance, aircraft sale-leasebacks, engine and private-jet lending, and
+      the credit performance of lessors and their airline counterparties.
+      NOT IN SCOPE: aviation infrastructure equity — airports, FBO networks, ground
+      handling, MRO businesses — which is infrastructure investing, not aircraft
+      credit, even when a tracked manager is the buyer.
+
+  - id: abl
+    name: Asset-based lending
+    name_zh: 资产支持贷款
+    requires_credit_context: true
+    confidence: high
+    keywords:
+      - asset-based lending
+      - asset based lending
+      - ABL
+      - asset-based finance
+      - asset-backed finance
+      - ABF
+      - specialty finance
+      - speciality finance
+      - forward flow
+      - warehouse facility
+      - receivables financing
+      - equipment finance
+      - consumer loan securitization
+      - consumer loan securitisation
+      - merchant cash advance
+      - ABS
+      - significant risk transfer
+    primary_gps: [basepoint, apollo, kkr, hsbc-am, bayview]
+    scope: >
+      Lending secured on assets and receivables rather than on corporate cash flow:
+      forward-flow agreements with originators, warehouse and securitisation
+      facilities, consumer and small-business ABS, equipment and receivables finance,
+      significant risk transfer, and the asset-based-finance build-out at the large
+      credit managers.
+
+  - id: real-estate
+    name: Real estate credit
+    name_zh: 房地产信贷
+    requires_credit_context: true
+    confidence: high
+    keywords:
+      - commercial real estate
+      - CRE
+      - real estate credit
+      - real estate debt
+      - CMBS
+      - CRE CLO
+      - mortgage REIT
+      - construction loan
+      - bridge loan
+      - office loan
+      - multifamily loan
+      - property loan
+      - maturity wall
+    primary_gps: [pretium, kkr, apollo, pag, hsbc-am]
+    scope: >
+      Debt secured on commercial and residential property: CRE lending and
+      refinancing, CMBS and CRE CLO issuance, mortgage REITs, construction and bridge
+      finance, loan modifications and workouts, and the credit performance of
+      office, multifamily and industrial loan books.
+      NOT IN SCOPE: property acquisitions and disposals as equity transactions,
+      including net-lease portfolio purchases, unless the story is about the financing.
+
+  - id: mortgage
+    name: Mortgage
+    name_zh: 抵押贷款
+    requires_credit_context: false
+    confidence: high
+    keywords:
+      - mortgage
+      - MSR
+      - mortgage servicing right
+      - RMBS
+      - whole loan
+      - non-QM
+      - agency mortgage
+      - mortgage servicer
+      - delinquency rate
+      - forbearance
+      - GSE
+      - Fannie Mae
+      - Freddie Mac
+      - Ginnie Mae
+      - home equity
+      - HELOC
+      - single-family rental
+    primary_gps: [bayview, pretium]
+    scope: >
+      Residential mortgage credit: mortgage servicing rights trades, whole-loan and
+      non-QM portfolios, RMBS issuance and performance, delinquency and forbearance
+      data, servicer capital and liquidity, GSE and agency policy, and single-family
+      rental securitisation.
+
+  - id: clo
+    name: CLO
+    name_zh: CLO
+    requires_credit_context: false
+    confidence: high
+    keywords:
+      - CLO
+      - collateralized loan obligation
+      - collateralised loan obligation
+      - CLO equity
+      - CLO AAA
+      - CLO liability spread
+      - CLO reset
+      - CLO refinancing
+      - warehouse CLO
+      - middle market CLO
+      - private credit CLO
+      - loan default rate
+      - leveraged loan index
+    primary_gps: [cifc, guggenheim, neuberger-berman, bain-capital, kkr, blue-owl]
+    scope: >
+      Collateralised loan obligations: new issuance, resets and refinancings, AAA and
+      mezzanine liability spreads, CLO equity returns, manager league tables, loan
+      default and downgrade rates that feed CLO tests, middle-market and private-credit
+      CLOs, and regulation or ratings methodology affecting the structure.
+
+# =============================================================================
+# Credit-context vocabulary. Used by `requires_credit_context` sectors and by
+# weak-alias resolution where the GP has no more specific context term.
+# =============================================================================
+
+credit_context_terms:
+  - loan
+  - lending
+  - lender
+  - credit
+  - debt
+  - borrower
+  - spread
+  - default
+  - defaults
+  - BDC
+  - CLO
+  - refinanc
+  - refinancing
+  - covenant
+  - non-accrual
+  - nonaccrual
+  - NAV
+  - securitis
+  - securitiz
+  - bond
+  - notes offering
+  - credit facility
+  - financial obligation
+  - indebtedness
+  - notes due
+  - revolver
+  - term loan
+  - leverage
+  - maturity
+  - restructuring
+  - bankruptcy
+  - downgrade
+  - distressed
+  - yield
+  - basis points
+  - interest payment
+  - PIK
+  - amortisation
+  - amortization
+  - collateral
+  - tranche
+  - mezzanine
+  - senior secured
+  - subordinated
+
+# Hard credit-event words. Used by the Agent 3 shortlist scorer (BUILD_SPEC §6.3).
+hard_event_terms:
+  - default
+  - defaults
+  - defaulted
+  - restructuring
+  - restructure
+  - non-accrual
+  - nonaccrual
+  - downgrade
+  - downgraded
+  - redemption
+  - redemptions
+  - gate
+  - bankruptcy
+  - chapter 11
+  - covenant breach
+  - covenant
+  - missed payment
+  - missed interest
+  - misses payment
+  - misses interest
+  - missing payment
+  - payment default
+  - liquidation
+  - writedown
+  - write-down
+  - impairment
+  - distressed exchange
+
+# =============================================================================
+# Macro themes. Agent 1 turns each into a query; they are the reason a
+# sub-sector story with no tracked manager in it can still reach the page.
+# =============================================================================
+
+themes:
+  - id: private-credit-regulation
+    query: private credit regulation SEC BDC rules oversight
+    region_bias: US
+  - id: bdc-non-accruals
+    query: BDC non-accruals NAV decline portfolio marks
+    region_bias: US
+  - id: default-rates
+    query: leveraged loan default rate private credit defaults
+    region_bias: US
+  - id: bank-private-credit
+    query: bank private credit partnership forward flow agreement
+    region_bias: US
+  - id: clo-issuance
+    query: CLO issuance record AAA spreads reset
+    region_bias: US
+  - id: software-credit-risk
+    query: software borrowers AI disruption debt refinancing risk
+    region_bias: US
+  - id: european-direct-lending
+    query: European direct lending private debt fund
+    region_bias: Europe
+  - id: european-clo
+    query: European CLO issuance spreads
+    region_bias: Europe
+  - id: rates-and-credit
+    query: Federal Reserve rate decision credit markets floating rate borrowers
+    region_bias: US
+  - id: mortgage-credit
+    query: mortgage servicing rights MSR sale delinquencies RMBS
+    region_bias: US
+  - id: abf-buildout
+    query: asset-based finance private credit expansion specialty finance
+    region_bias: US
+  - id: cre-maturity-wall
+    query: commercial real estate loan maturity wall refinancing CMBS
+    region_bias: US
+
+# =============================================================================
+# Region inference. A hint only — Agent 2 assigns the authoritative `region`.
+# =============================================================================
+
+regions:
+  Europe:
+    - Europe
+    - European
+    - UK
+    - United Kingdom
+    - Britain
+    - London
+    - Germany
+    - German
+    - France
+    - French
+    - Paris
+    - Frankfurt
+    - Netherlands
+    - Amsterdam
+    - Spain
+    - Spanish
+    - Madrid
+    - Italy
+    - Italian
+    - Milan
+    - Nordic
+    - Sweden
+    - Ireland
+    - Dublin
+    - Luxembourg
+    - Switzerland
+    - Zurich
+    - euro
+    - ECB
+    - European Central Bank
+    - eurozone
+    - sterling
+    - Bank of England
+  Asia:
+    - Hong Kong
+    - Singapore
+    - Japan
+    - Japanese
+    - Tokyo
+    - China
+    - Chinese
+    - Shanghai
+    - Beijing
+    - Korea
+    - Korean
+    - Seoul
+    - India
+    - Indian
+    - Mumbai
+    - Australia
+    - Sydney
+    - Asia
+    - Asian
+    - APAC
+  US:
+    - United States
+    - U.S.
+    - US
+    - American
+    - New York
+    - Wall Street
+    - Federal Reserve
+    - Fed
+    - SEC
+    - Washington
+    - Chicago
+    - Boston
+    - Texas
+    - California
+    - Nasdaq
+    - NYSE
+    - Treasury

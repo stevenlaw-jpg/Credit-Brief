@@ -1,0 +1,196 @@
+{
+  "_comment": "BUILD_SPEC §10.1. Synthetic items, every title prefixed [TEST] so they can never be mistaken for production output. `expect` is the assertion the suite enforces.",
+  "items": [
+    {
+      "id": "trap-01",
+      "title": "[TEST] KKR agrees to buy a theme-park operator for $4bn",
+      "summary": "KKR has agreed to acquire a regional theme-park operator in an all-cash transaction valuing the business at about $4 billion. The buyout is expected to close next year.",
+      "url": "https://example.test/kkr-theme-park",
+      "source": "Reuters",
+      "priority": 2,
+      "published_at": "2026-09-12T13:00:00Z",
+      "expect": {"keep": false, "why": "PE buyout by a tracked GP. The single most important test in the suite."}
+    },
+    {
+      "id": "trap-02",
+      "title": "[TEST] Apollo and KKR to back Atlantic Aviation at about $10bn valuation",
+      "summary": "Apollo Global Management and KKR have agreed to invest in Atlantic Aviation, the fixed-base operator network, in a transaction valuing the aviation services business at roughly $10 billion.",
+      "url": "https://example.test/atlantic-aviation",
+      "source": "Bloomberg",
+      "priority": 2,
+      "published_at": "2026-09-12T12:30:00Z",
+      "expect": {"keep": false, "why": "Aviation infrastructure equity, not aircraft-leasing credit."}
+    },
+    {
+      "id": "trap-03",
+      "title": "[TEST] Apollo 11 anniversary exhibition opens at the space museum",
+      "summary": "A new exhibition marking the Apollo 11 lunar landing opens this weekend, featuring NASA artefacts and a restored command module.",
+      "url": "https://example.test/apollo-11",
+      "source": "Local News",
+      "priority": 1,
+      "published_at": "2026-09-12T11:00:00Z",
+      "expect": {"keep": false, "candidate": false, "why": "Homonym: Apollo 11 / NASA."}
+    },
+    {
+      "id": "trap-04",
+      "title": "[TEST] Guggenheim Museum unveils new wing in Bilbao",
+      "summary": "The Guggenheim Museum has unveiled a new exhibition wing, its largest expansion in a decade.",
+      "url": "https://example.test/guggenheim-museum",
+      "source": "Arts Desk",
+      "priority": 1,
+      "published_at": "2026-09-12T10:00:00Z",
+      "expect": {"keep": false, "candidate": false, "why": "Homonym: the museum."}
+    },
+    {
+      "id": "trap-05",
+      "title": "[TEST] Bain & Company report says consulting demand rebounds",
+      "summary": "A new report from Bain & Company finds that demand for strategy consulting rebounded in the first half, led by technology clients.",
+      "url": "https://example.test/bain-company",
+      "source": "Consulting Weekly",
+      "priority": 1,
+      "published_at": "2026-09-12T09:30:00Z",
+      "expect": {"keep": false, "candidate": false, "why": "Wrong Bain: the consultancy."}
+    },
+    {
+      "id": "trap-06",
+      "title": "[TEST] PAG dealership group posts record quarter",
+      "summary": "Penske Automotive Group, which trades under the ticker PAG, reported record quarterly revenue on strong used-vehicle sales.",
+      "url": "https://example.test/penske",
+      "source": "Auto News",
+      "priority": 1,
+      "published_at": "2026-09-12T09:00:00Z",
+      "expect": {"keep": false, "candidate": false, "why": "Penske Automotive Group, not PAG the credit manager."}
+    },
+    {
+      "id": "trap-07",
+      "title": "[TEST] Basepoint Business Centres opens new workspace in Reading",
+      "summary": "Basepoint Business Centres has opened a serviced office space in Reading, adding 40 units of flexible workspace.",
+      "url": "https://example.test/basepoint-offices",
+      "source": "Property Week",
+      "priority": 1,
+      "published_at": "2026-09-12T08:30:00Z",
+      "expect": {"keep": false, "candidate": false, "why": "Wrong Basepoint: the UK serviced-office operator."}
+    },
+    {
+      "id": "trap-08",
+      "title": "[TEST] HSBC reports group pre-tax profit of $8.2bn",
+      "summary": "HSBC Holdings reported group pre-tax profit of $8.2 billion, helped by a wider net interest margin in its retail banking division.",
+      "url": "https://example.test/hsbc-results",
+      "source": "Financial Press",
+      "priority": 2,
+      "published_at": "2026-09-12T08:00:00Z",
+      "expect": {"keep": false, "candidate": false, "why": "HSBC the bank, not HSBC Asset Management."}
+    },
+    {
+      "id": "trap-09",
+      "title": "[TEST] Blue Owl acquires net-lease retail portfolio for $1.1bn",
+      "summary": "Blue Owl Capital has agreed to acquire a portfolio of net-lease retail properties for about $1.1 billion through its real estate equity strategy.",
+      "url": "https://example.test/blue-owl-net-lease",
+      "source": "Real Estate Wire",
+      "priority": 2,
+      "published_at": "2026-09-12T07:30:00Z",
+      "expect": {"keep": false, "why": "Real-estate equity by a tracked GP; explicitly out of scope in Blue Owl's credit_scope."}
+    },
+    {
+      "id": "trap-10",
+      "title": "[TEST] New private credit interval fund launches for retail investors",
+      "summary": "A new interval fund offering retail investors access to private credit has launched with a $500 minimum investment and quarterly liquidity windows.",
+      "url": "https://example.test/interval-fund",
+      "source": "Fund Marketing Wire",
+      "priority": 1,
+      "published_at": "2026-09-12T07:00:00Z",
+      "expect": {"keep": false, "why": "Retail product marketing with no portfolio consequence. Tier 3."}
+    },
+    {
+      "id": "trap-11",
+      "title": "[TEST] Podcast: a veteran investor on the future of private credit",
+      "summary": "In this week's episode, a veteran credit investor discusses where he sees the private credit market heading over the next decade and what younger analysts should study.",
+      "url": "https://example.test/podcast",
+      "source": "Markets Podcast",
+      "priority": 1,
+      "published_at": "2026-09-12T06:30:00Z",
+      "expect": {"keep": false, "why": "Interview with no new fact. Tier 3."}
+    },
+    {
+      "id": "trap-12",
+      "title": "[TEST] Blue Owl Technology Finance reports Q2 results, NAV $17.20, non-accruals 0.4%",
+      "summary": "Blue Owl Technology Finance Corp reported net asset value of $17.20 per share for the second quarter, down from $17.44. Non-accruals rose to 0.4% of the portfolio at fair value. The BDC declared a quarterly dividend of $0.35 a share.",
+      "url": "https://example.test/otf-q2",
+      "source": "Business Wire",
+      "priority": 3,
+      "published_at": "2026-09-12T21:30:00Z",
+      "expect": {"keep": true, "importance": 1, "gp_ids": ["otf"], "why": "Direct BDC earnings event at a tracked holding. Tier 1."}
+    },
+    {
+      "id": "trap-13",
+      "title": "[TEST] Bayview Asset Management acquires $10bn mortgage servicing portfolio",
+      "summary": "Bayview Asset Management has agreed to acquire mortgage servicing rights on a portfolio of about $10 billion in unpaid principal balance, expanding its Lakeview servicing platform.",
+      "url": "https://example.test/bayview-msr",
+      "source": "HousingWire",
+      "priority": 3,
+      "published_at": "2026-09-12T18:00:00Z",
+      "expect": {"keep": true, "importance": 1, "gp_ids": ["bayview"], "sector_ids": ["mortgage"], "why": "Direct transaction at a tracked GP in a tracked sub-sector. Tier 1."}
+    },
+    {
+      "id": "trap-14",
+      "title": "[TEST] PAG closes $2bn Asia private credit fund",
+      "summary": "PAG has held a final close for its latest Asia private credit fund at $2 billion, above its original target. The fund will lend to mid-market borrowers across the region.",
+      "url": "https://example.test/pag-close",
+      "source": "Private Debt Investor",
+      "priority": 3,
+      "published_at": "2026-09-12T16:00:00Z",
+      "expect": {"keep": true, "gp_ids": ["pag"], "sector_ids": ["private-credit"], "why": "Tracked GP, tracked sub-sector. Asia is allowed because PAG is a holding, not because Asia is a target region."}
+    },
+    {
+      "id": "trap-15",
+      "title": "[TEST] CLO AAA spreads tighten to 120bp as issuance sets monthly record",
+      "summary": "Spreads on AAA rated CLO liabilities tightened to 120 basis points this week as monthly issuance set a record, with managers rushing to price deals before quarter end.",
+      "url": "https://example.test/clo-spreads",
+      "source": "GlobalCapital",
+      "priority": 3,
+      "published_at": "2026-09-12T15:00:00Z",
+      "expect": {"keep": true, "importance": 2, "sector_ids": ["clo"], "why": "Sub-sector market data with no tracked GP named. Tier 2."}
+    },
+    {
+      "id": "trap-16",
+      "title": "[TEST] European direct lending deal count falls in Q3",
+      "summary": "The number of European direct lending transactions fell 12% in the third quarter, according to new data, as borrowers returned to the syndicated loan market for cheaper financing.",
+      "url": "https://example.test/european-dl",
+      "source": "Alternative Credit Investor",
+      "priority": 3,
+      "published_at": "2026-09-12T14:00:00Z",
+      "expect": {"keep": true, "importance": 2, "region": "Europe", "sector_ids": ["private-credit"], "why": "Tier 2 European sub-sector data."}
+    },
+    {
+      "id": "trap-17",
+      "title": "[TEST] Software borrowers face refinancing squeeze as AI reshapes demand",
+      "summary": "Lenders are reassessing recurring-revenue loans to enterprise software companies as AI-driven competition slows renewal rates. Several mid-market software borrowers face 2027 maturities at materially wider spreads.",
+      "url": "https://example.test/software-refi",
+      "source": "Private Debt Investor",
+      "priority": 3,
+      "published_at": "2026-09-12T13:30:00Z",
+      "expect": {"keep": true, "importance": 2, "sector_ids": ["software"], "why": "The sub-sector thesis the portfolio is directly exposed to. Tier 2."}
+    },
+    {
+      "id": "trap-18",
+      "title": "[TEST] Bain Capital launches JB Aircraft Finance",
+      "summary": "Bain Capital has launched JB Aircraft Finance, a new platform that will provide debt financing secured on commercial aircraft, seeded with $1.5 billion of commitments.",
+      "url": "https://example.test/jb-aircraft",
+      "source": "Airfinance Journal",
+      "priority": 3,
+      "published_at": "2026-09-12T12:00:00Z",
+      "expect": {"keep": true, "gp_ids": ["bain-capital"], "sector_ids": ["aircraft-leasing"], "why": "Tracked GP entering a tracked sub-sector."}
+    },
+    {
+      "id": "trap-19-agent3-recall",
+      "title": "[TEST] Mid-market software firm Vantify misses interest payment",
+      "summary": "Vantify, a mid-market enterprise software vendor, missed a scheduled interest payment this week, according to people familiar with the matter.",
+      "body": "Vantify, a mid-market enterprise software vendor, missed a scheduled interest payment on its term loan this week, according to people familiar with the matter. The $340 million unitranche facility was led by Blue Owl Technology Finance Corp, which holds roughly 40% of the loan, with the balance syndicated to two other private credit managers. Lenders have retained advisers ahead of a possible restructuring. The company had been marked at 94 cents on the dollar at the most recent quarter end.",
+      "url": "https://example.test/vantify-missed-payment",
+      "source": "Debtwire",
+      "priority": 2,
+      "published_at": "2026-09-12T17:00:00Z",
+      "expect": {"keep": false, "rescue": true, "why": "Agent 2 sees headline + snippet only and should discard. Agent 3, with the body, must rescue it: the lead lender is a tracked BDC. This is the test that proves Agent 3 earns its cost."}
+    }
+  ]
+}
