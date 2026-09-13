@@ -60,8 +60,8 @@ jobs:
       # The repo is public. Nothing that looks like a key may ever be committed.
       - name: Scan output for secrets
         run: |
-          if grep -rEl 'sk-ant-[A-Za-z0-9_-]{16,}' site/ ; then
-            echo "::error::a credential-shaped string is present in site/ — refusing to commit"
+          if grep -rEl 'sk-ant-[A-Za-z0-9_-]{16,}' docs/ ; then
+            echo "::error::a credential-shaped string is present in docs/ — refusing to commit"
             exit 1
           fi
           echo "clean"
@@ -70,7 +70,7 @@ jobs:
         run: |
           git config user.name  "credit-brief-bot"
           git config user.email "actions@github.com"
-          git add site/data
+          git add docs/data
           git diff --staged --quiet || git commit -m "brief: $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
 
@@ -79,5 +79,5 @@ jobs:
         run: |
           echo "### Run summary" >> $GITHUB_STEP_SUMMARY
           echo '```json' >> $GITHUB_STEP_SUMMARY
-          tail -n 1 site/data/_runs.jsonl >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "{}" >> $GITHUB_STEP_SUMMARY
+          tail -n 1 docs/data/_runs.jsonl >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "{}" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY

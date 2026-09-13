@@ -68,7 +68,7 @@ python -m pipeline.run --dry-run
 python -m pipeline.run
 
 python -m pytest tests/ -q          # the trap fixtures are the contract
-python -m http.server -d site 8000  # view the page
+python -m http.server -d docs 8000  # view the page
 ```
 
 ### Credentials
@@ -90,7 +90,7 @@ New repository secret*, under exactly those names. `.github/workflows/update.yml
 passes them into the run step as environment variables, and a later step greps the
 build output for credential-shaped strings and fails the job rather than commit one.
 
-Never put a key in `config/`, in `site/`, or in any tracked file. The repository has to
+Never put a key in `config/`, in `docs/`, or in any tracked file. The repository has to
 be public for Pages and Actions to be free.
 
 | Flag | Effect |
@@ -100,7 +100,7 @@ be public for Pages and Actions to be free.
 | `--dry-run` | stops after the rule layer and prints the funnel |
 | `--lookback-hours N` | overrides the harvest window (use `168` for a first best-effort backfill) |
 | `--max-items N` | overrides the per-run summary cap |
-| `--data-dir PATH` | writes somewhere other than `site/data` |
+| `--data-dir PATH` | writes somewhere other than `docs/data` |
 
 ---
 
@@ -110,7 +110,7 @@ be public for Pages and Actions to be free.
 
 - **Schedule.** `.github/workflows/update.yml` runs `python -m pipeline.run` on a cron every
   three hours (`0 */3 * * *`, UTC). Each run harvests, filters, summarises, writes JSON into
-  `site/data/`, commits and pushes. GitHub Pages redeploys on the push.
+  `docs/data/`, commits and pushes. GitHub Pages redeploys on the push.
 - **Manual update.** The same workflow accepts `workflow_dispatch`: Actions → *update-brief* →
   *Run workflow*. It takes two optional inputs — `lookback_hours` (use `168` for a wider
   first sweep) and `mock` (run with no API spend).
@@ -134,12 +134,13 @@ repositories with no activity for 60 days.
 ### Deployment checklist
 
 1. Push this repository to GitHub (public, so Pages and Actions are free).
-2. Settings → Pages → deploy from the default branch, `/site` folder.
+2. Settings → Pages → deploy from the default branch, `/docs` folder. (GitHub serves a branch
+   folder only from `/` or `/docs`, which is why the site does not live in `site/`.)
 3. Settings → Secrets and variables → Actions: add `ANTHROPIC_API_KEY`, and
    `EDGAR_USER_AGENT` as `"your-project your-email@example.com"` — the SEC requires a
    descriptive User-Agent with a contact address.
 4. Actions → *update-brief* → *Run workflow*, optionally with `lookback_hours: 168`.
-5. Confirm the run committed to `site/data` and the page updated. **A pipeline that has only
+5. Confirm the run committed to `docs/data` and the page updated. **A pipeline that has only
    ever run locally is not finished.**
 
 ---
@@ -501,7 +502,7 @@ pipeline/
   store.py                 JSON read/write, index, retention, seen-set, run log
   run.py                   orchestration and CLI
   report.py                turns the run log into the numbers this README quotes
-site/
+docs/                      served by GitHub Pages straight from the branch
   index.html, assets/      the page: no framework, no build step, no storage
   data/                    generated and committed: index.json, YYYY-MM-DD.json,
                            _seen.json, _runs.jsonl
@@ -513,7 +514,7 @@ tests/
 
 ### Data contracts
 
-`site/data/YYYY-MM-DD.json` holds the day's items, **already sorted by `published_at`
+`docs/data/YYYY-MM-DD.json` holds the day's items, **already sorted by `published_at`
 descending** — the frontend renders in file order and never re-sorts, because importance is a
 tag and must never become a position. `index.json` carries the date list with counts and the
 bilingual tag names. `_seen.json` is the URL-hash set that makes re-runs free. `_runs.jsonl` is

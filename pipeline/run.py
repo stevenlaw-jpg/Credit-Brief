@@ -336,7 +336,7 @@ def main(argv: list[str] | None = None) -> int:
                         help="stop after the rule layer and print the funnel")
     parser.add_argument("--lookback-hours", type=int, default=None,
                         help="override the harvest window (first run: try 168)")
-    parser.add_argument("--data-dir", default=None, help="override site/data")
+    parser.add_argument("--data-dir", default=None, help="override docs/data")
     parser.add_argument("--max-items", type=int, default=None,
                         help="override max_new_items_per_run")
     parser.add_argument("--no-prune", action="store_true", help="skip retention this run")

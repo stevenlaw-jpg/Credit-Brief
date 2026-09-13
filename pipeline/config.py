@@ -21,7 +21,10 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_DIR = ROOT / "config"
 PROMPT_DIR = CONFIG_DIR / "prompts"
-SITE_DIR = ROOT / "site"
+# GitHub Pages will serve a branch folder only from "/" or "/docs", so the
+# site lives in docs/ rather than site/. Serving straight from the branch
+# means the page keeps working even when a pipeline run fails.
+SITE_DIR = ROOT / "docs"
 DATA_DIR = SITE_DIR / "data"
 
 

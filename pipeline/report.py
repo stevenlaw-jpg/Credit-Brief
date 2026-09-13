@@ -96,7 +96,7 @@ def markdown(data: dict[str, Any]) -> str:
 
     if not data["runs"]:
         return ("_No completed runs yet. These numbers are generated from "
-                "`site/data/_runs.jsonl` by `python -m pipeline.report`._")
+                "`docs/data/_runs.jsonl` by `python -m pipeline.report`._")
 
     w(f"_Measured over {data['runs']} runs, "
       f"{data['first_run']} to {data['last_run']}. "

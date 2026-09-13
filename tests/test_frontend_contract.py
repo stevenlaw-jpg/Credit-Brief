@@ -12,7 +12,7 @@ import pytest
 from pipeline.run import run
 from pipeline.store import Store
 
-SITE = Path(__file__).parent.parent / "site"
+SITE = Path(__file__).parent.parent / "docs"
 APP_JS = (SITE / "assets" / "app.js").read_text(encoding="utf-8")
 CSS = (SITE / "assets" / "style.css").read_text(encoding="utf-8")
 HTML = (SITE / "index.html").read_text(encoding="utf-8")
