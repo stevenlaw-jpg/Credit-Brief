@@ -127,6 +127,36 @@ be public for Pages and Actions to be free.
   read from the environment. The workflow greps the build output for credential-shaped strings
   and refuses to commit if it finds one.
 
+### Keeping it alive
+
+The page and the pipeline fail independently, which is the point of the design.
+
+**The page.** It is static files on a public branch, served by GitHub Pages. It stays up
+for as long as the repository exists, stays public and has Pages enabled — no server, no
+certificate to renew, no dependency that can expire. Every run that has ever succeeded is
+in git history, so nothing is lost even if `docs/data` were deleted. The one thing that
+changes the URL is renaming the account or the repository; a custom domain would insulate
+against that.
+
+**The updates.** Four things can stop them, in rough order of likelihood:
+
+| What stops it | What the reader sees | What to do |
+|---|---|---|
+| `ANTHROPIC_API_KEY` expires, is revoked, or the account runs out of credit | The last good build, plus the staleness notice | Replace the secret |
+| GitHub disables the schedule after 60 days of repository inactivity | Same | Not expected here: every run rewrites `index.json` and appends to `_runs.jsonl`, so every run commits and the repository is never inactive. GitHub also emails before disabling |
+| A source changes its feed URL | Nothing — one dead source logs a warning and contributes nothing | Fix it when the run log shows it returning zero |
+| The workflow itself breaks | Same as above | GitHub emails the owner on a failed run |
+
+In every one of those cases the page keeps serving. That is deliberate: a static site cannot
+go down because a pipeline run failed. The risk it creates is a page that quietly presents
+week-old news as current, so when the last successful run is older than three scheduled
+intervals the page says so, in both languages, above the items.
+
+**Cost** is the only recurring commitment: the Anthropic API, targeted at under US$0.50 a
+day. Runners and hosting are free for public repositories. **Storage** is a 90-day rolling
+window on the served files; raise `retention_days` in `config/settings.yaml` to keep more,
+though git history retains every day regardless.
+
 One caveat worth knowing so a late timestamp is not mistaken for a fault: scheduled workflows on
 free runners can be delayed by several minutes under load, and GitHub disables schedules on
 repositories with no activity for 60 days.
